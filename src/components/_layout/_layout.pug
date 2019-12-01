@@ -23,11 +23,36 @@ html(lang="en")
 		block header
 			include _header.pug
 		main
-			block banner,breadcrumb
 			block main
 			#js-page-verify(class=bodyClass hidden)
 		block footer
 			include _footer.pug
+		.form-dang-ky-thong-tin#form-dk(style="display: none")
+			.title-form NHẬP THÔNG TIN CÁ NHÂN
+			form(action="#")
+				.form-group
+					label Họ và tên*
+					.input-group
+						input(type="text" placeholder="Nhập thông tin")
+				.form-group
+					label Số CMND/ Thẻ Căn cước/ Hộ chiếu*
+					.input-group
+						input(type="text" placeholder="Nhập thông tin")
+				.form-group
+					label Số điện thoại*
+					.input-group
+						input(type="text" placeholder="Nhập thông tin")
+			.desc
+				ul
+					li Công ty TNHH Deloitte Việt Nam sẽ là đơn vị chịu trách nhiệm lựa chọn người chiến thắng một cách độc lập cho chương trình này.
+					li Bằng việc nhập thông tin tại các trường quy định và ấn nút “Hoàn tất”, bạn đã đồng ý cho phép VLIVE và công ty TNHH Deloitte sử dụng thông tin cá nhân của mình để lựa chọn người may mắn nhận vé tham gia V Heartbeat Year End Party 2019 Powered by Diana.
+					li VLIVE đảm bảo thông tin cá nhân của bạn sẽ không được chia sẻ cho bên thứ 3 nào khác ngoài Công ty TNHH Deloitte.
+			.note Thông tin cá nhân đã đăng ký sẽ không thể thay đổi. Vui lòng kiểm tra kỹ và điền chính xác thông tin này.
+			.block-btn
+				button.btn HOÀN THÀNH
+		.block-thank-you#block-thank-you(style="displau:none")
+			.logo
+				img(src="./assets/images/logo.png", alt="", srcset="")
 		//- include scripts
 		script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s&libraries=places")
 		//- script(type="text/javascript", src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3')

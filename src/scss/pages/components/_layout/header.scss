@@ -1,0 +1,102 @@
+header {
+	position           : fixed;
+	width              : 100%;
+	height             : 110px;
+	top                : 0;
+	left               : 0;
+	background         : #1A1A1A;
+	background-image   : url(../assets/images/header/background.png);
+	background-repeat  : no-repeat;
+	background-position: center;
+	z-index            : 500;
+
+	.list-logo {
+		height     : 100%;
+		display    : flex;
+		align-items: center;
+
+		.item {
+			position     : relative;
+			padding-right: 25px;
+			margin-right : 25px;
+
+			&:last-child {
+				margin-right : 0;
+				padding-right: 0;
+
+				&:after {
+					content: none;
+				}
+			}
+
+			&:after {
+				content   : '';
+				position  : absolute;
+				right     : 0;
+				top       : 50%;
+				width     : 1px;
+				height    : 18px;
+				transform : translateY(-50%);
+				background: #707070;
+			}
+		}
+	}
+
+	.list-nav {
+		display    : flex;
+		align-items: center;
+		max-width  : 100%;
+		margin-left: auto;
+
+		.nav-item {
+			.login {
+				display    : flex;
+				align-items: center;
+
+				.avatar {
+					position     : relative;
+					padding-right: 15px;
+					margin-right : 25px;
+
+					figure {
+						height       : 35px;
+						width        : 35px;
+						border-radius: 50%;
+						background   : #606060;
+						overflow     : hidden;
+					}
+
+					&:after {
+						content   : '';
+						position  : absolute;
+						right     : 0;
+						top       : 50%;
+						width     : 1px;
+						height    : 18px;
+						transform : translateY(-50%);
+						background: #707070;
+					}
+				}
+
+				.name,
+				.button-login {
+					cursor: pointer;
+					color : #ffffff;
+				}
+			}
+
+			.list-download {
+				display    : flex;
+				margin-left: 45px;
+
+				.item {
+					margin-right: 15px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}

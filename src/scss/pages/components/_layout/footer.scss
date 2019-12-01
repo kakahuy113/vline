@@ -1,0 +1,35 @@
+footer {
+	background: linear-gradient(45deg, rgba(70, 70, 90, 1) 0%, rgba(13, 19, 27, 1) 100%);
+	padding   : 90px 0;
+
+	.copy-right {
+		align-self: flex-end;
+
+		p {
+			font-size: 18px;
+			color    : #707070;
+		}
+	}
+
+	.list-social-media {
+		margin-left: auto;
+
+		p {
+			font-size    : 18px;
+			color        : #707070;
+			margin-bottom: 13px;
+		}
+
+		ul {
+			display: flex;
+
+			li {
+				margin-right: 25px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

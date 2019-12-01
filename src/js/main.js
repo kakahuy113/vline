@@ -1,6 +1,5 @@
 // import here !!!
 import loading from './loading';
-import map from './map';
 import mapping from "./mapping";
 
 
@@ -55,31 +54,6 @@ class Tab {
 	}
 }
 
-// HEADER
-const activeHeader = () => {
-
-	let heightHeader = document.querySelector('header').offsetHeight;
-
-	if (window.scrollY > heightHeader) {
-		document.querySelector('header').classList.add('active');
-	} else {
-		document.querySelector('header').classList.remove('active');
-	}
-}
-
-// ACTIVE ITEM MENU BY URL
-function activeMenuByUrl() {
-	var url = window.location.href.split('/').pop();
-
-	let listNavItem = $('.nav-item a');
-	listNavItem.each(function() {
-		let currenUrl = $(this).attr('href');
-		if (url.includes(currenUrl)) {
-			$(this).parents('.nav-item').addClass('active');
-		}
-	})
-}
-
 // CONTROL SVG
 const SVG = () => {
 	jQuery('img.svg').each(function() {
@@ -116,31 +90,13 @@ const SVG = () => {
 	});
 }
 
-// SHOW BUTTON BACK TO TOP
-const showBackToTop = () => {
-	let currentScroll = document.querySelector('body').clientHeight - (window.innerHeight + 200);
-	if (window.scrollY >= currentScroll) {
-		document.getElementById('back-to-top').style.display = 'flex';
-		setTimeout(() => {
-			document.getElementById('back-to-top').classList.add('show');
-		}, 0);
-	} else {
-		document.getElementById('back-to-top').style.display = 'none';
-		document.getElementById('back-to-top').classList.remove('show');
+function countItem() {
+	let item = $('.block-vote.small .list-vote .item-vote');
+
+	if (item.length > 4) {
+
 	}
 }
-
-// CLICK GO TOP
-const clickGoTop = () => {
-	let goTopButton = document.getElementById('back-to-top')
-	goTopButton.addEventListener('click', () => {
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth',
-		})
-	})
-}
-
 
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
@@ -148,18 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	loading();
 	// WOW
 	new WOW().init();
-	// GOOGLEMAP
-	map();
 	// SVG CONTROL
 	SVG();
-	// HEADER
-	activeMenuByUrl()
+	countItem();
 });
 
 // CHẠY KHI WINDOWN SCROLL
 window.addEventListener('scroll', () => {
 	// ACTIVE HEADER WHEN SCROLL
-	activeHeader();
-	// BACK TO TOP
-	showBackToTop();
 })
