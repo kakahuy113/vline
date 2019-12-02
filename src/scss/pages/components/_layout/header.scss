@@ -11,6 +11,8 @@ header {
 	z-index            : 500;
 
 	.list-logo {
+		flex       : 0 0 50%;
+		max-width  : 50%;
 		height     : 100%;
 		display    : flex;
 		align-items: center;
@@ -43,12 +45,16 @@ header {
 	}
 
 	.list-nav {
+		flex       : 0 0 50%;
+		max-width  : 50%;
 		display    : flex;
 		align-items: center;
-		max-width  : 100%;
-		margin-left: auto;
 
 		.nav-item {
+			&:first-child {
+				margin-left: auto;
+			}
+
 			.login {
 				display    : flex;
 				align-items: center;
@@ -95,6 +101,34 @@ header {
 					&:last-child {
 						margin-right: 0;
 					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		.list-logo {
+			padding-right: 25px;
+
+			.item {
+				padding-right: 10px;
+				margin-right : 10px;
+			}
+		}
+
+		.list-nav {
+			padding-left: 25px;
+
+			.nav-item {
+				.login {
+					.avatar {
+						margin-right : 10px;
+						padding-right: 10px;
+					}
+				}
+
+				.list-download {
+					margin-left: 10px;
 				}
 			}
 		}
