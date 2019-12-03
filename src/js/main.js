@@ -1,6 +1,5 @@
 // import here !!!
 import loading from './loading';
-import mapping from "./mapping";
 
 
 // Script Cho Tab
@@ -90,12 +89,109 @@ const SVG = () => {
 	});
 }
 
-function countItem() {
-	let item = $('.block-vote.small .list-vote .item-vote');
+function checkItem() {
+	$('.block-vote .list-vote').each(function() {
+		let _this = $(this);
+		_this.find('.item-vote').on('click', function() {
+			_this.find('.item-vote').not(this).removeClass('checked')
+			$(this).addClass('checked');
+		})
+	})
+}
 
-	if (item.length > 4) {
+const checkCodeLogin = () => {
+	$('body').on('click', '#btn-vote', function(e) {
+		const code = document.getElementById('session-code').value;
+		const url = document.getElementById('btn-vote').getAttribute('data-url');
+		e.preventDefault();
+		$.ajax({
+			url: url,
+			type: 'POST',
+			data: {
+				code: code
+			},
+			beforeSend: function(e) {
+				$('.index-4 #btn-vote').attr('disabled', 'disabled')
+			},
+			// TEST
+			error: function() {
+				// $.fancybox.open({
+				// 	src: '#form-vote',
+				// 	type: 'inline',
+				// 	opts: {
+				// 		hash: false,
+				// 		closeExisting: true,
+				// 	}
+				// })
+			},
+			success: function(res) {
+				$.fancybox.open({
+					src: '#form-vote',
+					type: 'inline',
+					opts: {
+						hash: false,
+						closeExisting: true,
+					}
+				})
+			},
+			complete: function(response) {
+				$('.index-4 #btn-vote').removeAttr('disabled')
+			}
+		})
+	})
 
-	}
+	$('body').on('click', '#btn-submit', function(e) {
+		e.preventDefault();
+		const Votes = [];
+		const url = document.getElementById('btn-submit').getAttribute('data-url');
+		const Name = document.getElementById('Form-Name').value;
+		const Identity = document.getElementById('Form-Identity').value;
+		const Phone = document.getElementById('Form-Phone').value;
+
+		$('.block-vote .list-vote').each(function() {
+			let itemChecked = $(this).find('.item-vote.checked').attr('data-value');
+			Votes.push(itemChecked)
+		})
+
+		$.ajax({
+			url: url,
+			type: 'POST',
+			data: {
+				Name: Name,
+				Identity: Identity,
+				Phone: Phone,
+				Votes: Votes
+			},
+			// TEST
+			error: function(err) {
+				// $('btn-submit').attr('disabled', 'disabled')
+				// $('#form-thank .note').html('<p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
+				// $.fancybox.open({
+				// 	src: '#form-thank',
+				// 	type: 'inline',
+				// 	opts: {
+				// 		hash: false,
+				// 		closeExisting: true,
+				// 	}
+				// });
+			},
+			success: function(res) {
+				$('btn-submit').attr('disabled', 'disabled')
+				$('#form-thank .note').html(res.Messege);
+				$.fancybox.open({
+					src: '#form-thank',
+					type: 'inline',
+					opts: {
+						hash: false,
+						closeExisting: true,
+					}
+				});
+			},
+			complete: function() {
+				$('btn-submit').removeAttr('disabled')
+			}
+		})
+	})
 }
 
 // CHẠY KHI DOCUMENT SẴN SÀNG
@@ -106,7 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	new WOW().init();
 	// SVG CONTROL
 	SVG();
-	countItem();
+	checkItem();
+	checkCodeLogin();
 });
 
 // CHẠY KHI WINDOWN SCROLL
