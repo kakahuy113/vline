@@ -123,16 +123,6 @@ const checkCodeLogin = () => {
 			},
 			// TEST
 			error: function() {
-				// $.fancybox.open({
-				// 	src: '#form-vote',
-				// 	type: 'inline',
-				// 	opts: {
-				// 		hash: false,
-				// 		closeExisting: true,
-				// 	}
-				// })
-			},
-			success: function(res) {
 				$.fancybox.open({
 					src: '#form-vote',
 					type: 'inline',
@@ -141,6 +131,36 @@ const checkCodeLogin = () => {
 						closeExisting: true,
 					}
 				})
+				// $.fancybox.open({
+				// 	src: '#form-thank',
+				// 	type: 'inline',
+				// 	opts: {
+				// 		hash: false,
+				// 		closeExisting: true,
+				// 	}
+				// });
+			},
+			success: function(res) {
+				if (res.Code === 200) {
+					$.fancybox.open({
+						src: '#form-vote',
+						type: 'inline',
+						opts: {
+							hash: false,
+							closeExisting: true,
+						}
+					})
+				} else {
+					$('#form-thank .note').html(res.Messege);
+					$.fancybox.open({
+						src: '#form-thank',
+						type: 'inline',
+						opts: {
+							hash: false,
+							closeExisting: true,
+						}
+					});
+				}
 			},
 			complete: function(response) {
 				$('.index-4 #btn-vote').removeAttr('disabled')
@@ -172,16 +192,16 @@ const checkCodeLogin = () => {
 			},
 			// TEST
 			error: function(err) {
-				// $('btn-submit').attr('disabled', 'disabled')
-				// $('#form-thank .note').html('<p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
-				// $.fancybox.open({
-				// 	src: '#form-thank',
-				// 	type: 'inline',
-				// 	opts: {
-				// 		hash: false,
-				// 		closeExisting: true,
-				// 	}
-				// });
+				$('btn-submit').attr('disabled', 'disabled')
+				$('#form-thank .note').html('<p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
+				$.fancybox.open({
+					src: '#form-thank',
+					type: 'inline',
+					opts: {
+						hash: false,
+						closeExisting: true,
+					}
+				});
 			},
 			success: function(res) {
 				$('btn-submit').attr('disabled', 'disabled')
