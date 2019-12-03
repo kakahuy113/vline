@@ -123,14 +123,20 @@ const checkCodeLogin = () => {
 			},
 			// TEST
 			error: function() {
-				$.fancybox.open({
-					src: '#form-vote',
-					type: 'inline',
-					opts: {
-						hash: false,
-						closeExisting: true,
-					}
-				})
+				// NẾU ĐÃ ĐĂNG NHẬP RỒI
+
+				// $.fancybox.open({
+				// 	src: '#form-vote',
+				// 	type: 'inline',
+				// 	opts: {
+				// 		hash: false,
+				// 		closeExisting: true,
+				// 	}
+				// })
+
+				// NẾU CHƯA ĐĂNG NHẬP
+
+				// $('#form-thank .desc').html('<p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p><p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
 				// $.fancybox.open({
 				// 	src: '#form-thank',
 				// 	type: 'inline',
@@ -151,7 +157,7 @@ const checkCodeLogin = () => {
 						}
 					})
 				} else {
-					$('#form-thank .note').html(res.Messege);
+					$('#form-thank .desc').html(res.Messege);
 					$.fancybox.open({
 						src: '#form-thank',
 						type: 'inline',
@@ -175,6 +181,7 @@ const checkCodeLogin = () => {
 		const Name = document.getElementById('Form-Name').value;
 		const Identity = document.getElementById('Form-Identity').value;
 		const Phone = document.getElementById('Form-Phone').value;
+		const Email = document.getElementById('Form-Email').value;
 
 		$('.block-vote .list-vote').each(function() {
 			let itemChecked = $(this).find('.item-vote.checked').attr('data-value');
@@ -188,24 +195,25 @@ const checkCodeLogin = () => {
 				Name: Name,
 				Identity: Identity,
 				Phone: Phone,
+				Email: Email,
 				Votes: Votes
 			},
 			// TEST
 			error: function(err) {
-				$('btn-submit').attr('disabled', 'disabled')
-				$('#form-thank .note').html('<p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
-				$.fancybox.open({
-					src: '#form-thank',
-					type: 'inline',
-					opts: {
-						hash: false,
-						closeExisting: true,
-					}
-				});
+				// $('btn-submit').attr('disabled', 'disabled')
+				// $('#form-thank .desc').html('<p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p><p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
+				// $.fancybox.open({
+				// 	src: '#form-thank',
+				// 	type: 'inline',
+				// 	opts: {
+				// 		hash: false,
+				// 		closeExisting: true,
+				// 	}
+				// });
 			},
 			success: function(res) {
 				$('btn-submit').attr('disabled', 'disabled')
-				$('#form-thank .note').html(res.Messege);
+				$('#form-thank .desc').html(res.Messege);
 				$.fancybox.open({
 					src: '#form-thank',
 					type: 'inline',

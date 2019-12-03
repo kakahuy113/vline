@@ -34,79 +34,85 @@
 		.title
 			h3 V FANSHIP COMMUNITY
 			p Giải thương tôn vinh cộng đồng FANSHIP hoạt động tích cực trên VLIVE
-		.row.no-gutters.list-vote
-			-for(i=1;i<6;i++)
-				.item-vote(data-value=i)
-					figure
-						.box-img
-							img.ofc(src="./assets/images/item-vote/"+i+".png", alt="")
-						figcaption
-							h5 TÊN CA SĨ
-	.container.block-vote
-		.title
-			h3 BEST COMEBACK
-			p Giải thưởng tôn vinh nghệ sĩ sở hữu tác phẩm “comeback” ấn tượng,
-				br
-				| tạo xu hướng trong năm 2019 
-		.row.no-gutters.list-vote
-			-for(i=1;i<6;i++)
-				.item-vote(data-value=i)
-					figure
-						.box-img
-							img.ofc(src="./assets/images/item-vote/"+i+".png", alt="")
-						figcaption
-							h5 TÊN CA SĨ
-	.container.block-vote
-		.title
-			h3 BEST COMEBACK
-			p Giải thưởng tôn vinh nghệ sĩ sở hữu tác phẩm “comeback” ấn tượng,
-				br
-				| tạo xu hướng trong năm 2019 
-		.row.no-gutters.list-vote
-			-for(i=1;i<6;i++)
-				.item-vote(data-value=i)
-					figure
-						.box-img
-							img.ofc(src="./assets/images/item-vote/"+i+".png", alt="")
-						figcaption
-							h5 TÊN CA SĨ
-	.container.block-vote
-		.title
-			h3 FAVOURITE RISING STAR OF THE YEAR
-			p Giải thưởng tôn vinh nghệ sĩ trẻ tài năng, được yêu thích của năm 2019.
-		.row.no-gutters.list-vote
-			-for(i=1;i<6;i++)
-				.item-vote(data-value=i)
-					figure
-						.box-img
-							img.ofc(src="./assets/images/item-vote/"+i+".png", alt="")
-						figcaption
-							h5 TÊN CA SĨ
-	.container.block-vote
-		.title
-			h3 FAVOURITE RISING STAR OF THE YEAR
-			p Giải thưởng tôn vinh nhóm nhạc được yêu thích trong năm 2019.
-		.row.no-gutters.list-vote
-			-for(i=1;i<5;i++)
-				.item-vote(data-value=i)
-					figure
-						.box-img
-							img.ofc(src="./assets/images/item-vote/"+i+".png", alt="")
-						figcaption
-							h5 TÊN CA SĨ
-	.container.block-vote
-		.title
-			h3 FAVOURITE V HEARTBEAT LIVE STAGE OF KPOP STAR
-			p Giải thưởng tôn vinh  ca sĩ/ nhóm nhạc KPOP có màn trình diễn được yêu thích
-				br
-				| trên sân khấu V Heartbeat LIVE trong năm 2019.
-		.row.no-gutters.list-vote.border-0
-				-for(i=1;i<12;i++)
+		.row-wrapper
+			.row.no-gutters.list-vote
+				-for(i=1;i<6;i++)
 					.item-vote(data-value=i)
 						figure
 							.box-img
 								img.ofc(src="./assets/images/item-vote/"+i+".png", alt="")
 							figcaption
 								h5 TÊN CA SĨ
+	.container.block-vote
+		.title
+			h3 BEST COMEBACK
+			p Giải thưởng tôn vinh nghệ sĩ sở hữu tác phẩm “comeback” ấn tượng,
+				br
+				| tạo xu hướng trong năm 2019
+		.row-wrapper
+			.row.no-gutters.list-vote
+				-for(i=1;i<6;i++)
+					.item-vote(data-value=i)
+						figure
+							.box-img
+								img.ofc(src="./assets/images/item-vote/"+i+".png", alt="")
+							figcaption
+								h5 TÊN CA SĨ
+	.container.block-vote
+		.title
+			h3 BEST COMEBACK
+			p Giải thưởng tôn vinh nghệ sĩ sở hữu tác phẩm “comeback” ấn tượng,
+				br
+				| tạo xu hướng trong năm 2019
+		.row-wrapper
+			.row.no-gutters.list-vote
+				-for(i=1;i<6;i++)
+					.item-vote(data-value=i)
+						figure
+							.box-img
+								img.ofc(src="./assets/images/item-vote/"+i+".png", alt="")
+							figcaption
+								h5 TÊN CA SĨ
+	.container.block-vote
+		.title
+			h3 FAVOURITE RISING STAR OF THE YEAR
+			p Giải thưởng tôn vinh nghệ sĩ trẻ tài năng, được yêu thích của năm 2019.
+		.row-wrapper
+			.row.no-gutters.list-vote
+				-for(i=1;i<6;i++)
+					.item-vote(data-value=i)
+						figure
+							.box-img
+								img.ofc(src="./assets/images/item-vote/"+i+".png", alt="")
+							figcaption
+								h5 TÊN CA SĨ
+	.container.block-vote
+		.title
+			h3 FAVOURITE RISING STAR OF THE YEAR
+			p Giải thưởng tôn vinh nhóm nhạc được yêu thích trong năm 2019.
+		.row-wrapper
+			.row.no-gutters.list-vote
+				-for(i=1;i<5;i++)
+					.item-vote(data-value=i)
+						figure
+							.box-img
+								img.ofc(src="./assets/images/item-vote/"+i+".png", alt="")
+							figcaption
+								h5 TÊN CA SĨ
+	.container.block-vote
+		.title
+			h3 FAVOURITE V HEARTBEAT LIVE STAGE OF KPOP STAR
+			p Giải thưởng tôn vinh  ca sĩ/ nhóm nhạc KPOP có màn trình diễn được yêu thích
+				br
+				| trên sân khấu V Heartbeat LIVE trong năm 2019.
+		.row-wrapper
+			.row.no-gutters.list-vote.border-0
+					-for(i=1;i<12;i++)
+						.item-vote(data-value=i)
+							figure
+								.box-img
+									img.ofc(src="./assets/images/item-vote/"+i+".png", alt="")
+								figcaption
+									h5 TÊN CA SĨ
 	.btn.shadow
 		button#btn-vote(data-url="#") BÌNH CHỌN
