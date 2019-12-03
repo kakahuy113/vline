@@ -1,25 +1,28 @@
 header
 	.container
-		.row.no-gutters.h-110px
-			.list-logo
-				-for(i=1;i<4;i++)
-					.item
-						a(href="#")
-							img(src="./assets/images/header/logo-"+i+".png", alt="", srcset="")
-			.list-nav
-				.nav-item
-					.login
-						.avatar
-							figure
-								img.ofc(src="./assets/images/icons/user-default.svg", alt="", srcset="")
-						//- .name Hùng
-						.button-login
-							a(href="#") Đăng nhập
-				.nav-item
-					.list-download
+		.row.no-gutters
+			.button-mobile
+				span.line
+			.main-menu
+				.list-logo
+					-for(i=1;i<4;i++)
 						.item
 							a(href="#")
-								img(src="./assets/images/header/google-play-download.png", alt="", srcset="")
-						.item
-							a(href="#")
-								img(src="./assets/images/header/app-store-download.png", alt="", srcset="")
+								img(src="./assets/images/header/logo-"+i+".png", alt="", srcset="")
+				.list-nav
+					.nav-item
+						.login
+							.avatar
+								figure
+									img.ofc(src="./assets/images/icons/user-default.svg", alt="", srcset="")
+							//- .name Hùng
+							.button-login
+								a(href="#") Đăng nhập
+					.nav-item
+						.list-download
+							.item
+								a(href="#")
+									img(src="./assets/images/header/google-play-download.png", alt="", srcset="")
+							.item
+								a(href="#")
+									img(src="./assets/images/header/app-store-download.png", alt="", srcset="")

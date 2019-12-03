@@ -7,130 +7,266 @@ header {
 	background-position: center;
 	z-index            : 500;
 
-	.list-logo {
-		flex       : 0 0 50%;
-		max-width  : 50%;
-		height     : 100%;
-		display    : flex;
-		align-items: center;
+	.main-menu {
+		display: flex;
+		height : 110px;
+		width  : 100%;
 
-		.item {
-
-			position     : relative;
-			padding-right: 25px;
-			margin-right : 25px;
-
-			&:last-child {
-				margin-right : 0;
-				padding-right: 0;
-
-				&:after {
-					content: none;
-				}
-			}
-
-			&:after {
-				content   : '';
-				position  : absolute;
-				right     : 0;
-				top       : 50%;
-				width     : 1px;
-				height    : 18px;
-				transform : translateY(-50%);
-				background: #707070;
-			}
-		}
-	}
-
-	.list-nav {
-		flex       : 0 0 50%;
-		max-width  : 50%;
-		display    : flex;
-		align-items: center;
-
-		.nav-item {
-			&:first-child {
-				margin-left: auto;
-			}
-
-			.login {
-				display    : flex;
-				align-items: center;
-
-				.avatar {
-					position     : relative;
-					padding-right: 15px;
-					margin-right : 25px;
-
-					figure {
-						height       : 35px;
-						width        : 35px;
-						border-radius: 50%;
-						background   : #606060;
-						overflow     : hidden;
-					}
-
-					&:after {
-						content   : '';
-						position  : absolute;
-						right     : 0;
-						top       : 50%;
-						width     : 1px;
-						height    : 18px;
-						transform : translateY(-50%);
-						background: #707070;
-					}
-				}
-
-				.name,
-				.button-login {
-					cursor: pointer;
-					color : #ffffff;
-				}
-			}
-
-			.list-download {
-				display    : flex;
-				margin-left: 45px;
-
-				.item {
-					margin-right: 15px;
-
-					&:last-child {
-						margin-right: 0;
-					}
-				}
-			}
-		}
-	}
-
-	@media (max-width: 1024.98px) {
 		.list-logo {
-			padding-right: 25px;
+			flex       : 0 0 50%;
+			max-width  : 50%;
+			height     : 100%;
+			display    : flex;
+			align-items: center;
 
 			.item {
-				padding-right: 10px;
-				margin-right : 10px;
+
+				position     : relative;
+				padding-right: 25px;
+				margin-right : 25px;
+
+				&:last-child {
+					margin-right : 0;
+					padding-right: 0;
+
+					&:after {
+						content: none;
+					}
+				}
+
+				&:after {
+					content   : '';
+					position  : absolute;
+					right     : 0;
+					top       : 50%;
+					width     : 1px;
+					height    : 18px;
+					transform : translateY(-50%);
+					background: #707070;
+				}
 			}
 		}
 
 		.list-nav {
-			padding-left: 25px;
+			flex       : 0 0 50%;
+			max-width  : 50%;
+			display    : flex;
+			align-items: center;
 
 			.nav-item {
+				&:first-child {
+					margin-left: auto;
+				}
+
 				.login {
+					display    : flex;
+					align-items: center;
+
 					.avatar {
-						display: none;
+						position     : relative;
+						padding-right: 15px;
+						margin-right : 25px;
+
+						figure {
+							height       : 35px;
+							width        : 35px;
+							border-radius: 50%;
+							background   : #606060;
+							overflow     : hidden;
+						}
+
+						&:after {
+							content   : '';
+							position  : absolute;
+							right     : 0;
+							top       : 50%;
+							width     : 1px;
+							height    : 18px;
+							transform : translateY(-50%);
+							background: #707070;
+						}
 					}
 
+					.name,
 					.button-login {
-						font-size: 14px;
+						cursor: pointer;
+						color : #ffffff;
 					}
 				}
 
 				.list-download {
-					margin-left: 10px;
+					display    : flex;
+					margin-left: 45px;
+
+					.item {
+						margin-right: 15px;
+
+						&:last-child {
+							margin-right: 0;
+						}
+					}
 				}
+			}
+		}
+	}
+
+	.button-mobile {
+		cursor   : pointer;
+		position : relative;
+		display  : inline-block;
+		flex     : 0 0 24px;
+		max-width: 24px;
+		height   : 15px;
+		display  : none;
+
+		.line {
+			position     : absolute;
+			content      : '';
+			width        : 100%;
+			height       : 2px;
+			background   : #ffffff;
+			top          : 1px;
+			border-radius: 10px;
+
+			&:after,
+			&:before {
+				position     : absolute;
+				content      : '';
+				width        : 100%;
+				height       : 2px;
+				background   : #ffffff;
+				border-radius: 10px;
+			}
+
+			&:after {
+				top: 6px;
+			}
+
+			&:before {
+				top       : 12px;
+				transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+			}
+		}
+
+		&.active {
+			.line {
+				transform       : translate3d(0, 6px, 0) rotate(135deg);
+				transition      : transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+				transition-delay: 0.075s;
+
+				&:after {
+					opacity: 0;
+				}
+
+				&:before {
+					top      : -6px;
+					transform: translate3d(0, 6px, 0) rotate(90deg);
+				}
+			}
+		}
+	}
+
+	&.active {
+		.main-menu {
+			left: 0;
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		.main-menu {
+			.list-logo {
+				padding-right: 25px;
+
+				.item {
+					padding-right: 10px;
+					margin-right : 10px;
+				}
+			}
+
+			.list-nav {
+				padding-left: 25px;
+
+				.nav-item {
+					.login {
+						.avatar {
+							display: none;
+						}
+
+						.button-login {
+							font-size: 14px;
+						}
+					}
+
+					.list-download {
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		position       : relative;
+		background-size: cover;
+		height         : 50px;
+
+		.button-mobile {
+			display: block;
+			margin : 15px 0;
+		}
+
+		.main-menu {
+			position  : absolute;
+			top       : 50px;
+			left      : -100%;
+			height    : 100vh;
+			background: #1A1A1A;
+			display   : block;
+			transition: .3s all ease-in-out;
+
+			.list-logo {
+				padding-right: 0;
+
+				.item {
+					margin: 0 auto 25px;
+
+					&:after {
+						content: none;
+					}
+
+					&:last-child {
+						margin: 0 auto;
+					}
+				}
+			}
+
+			.list-nav {
+				padding-left: 0;
+
+				.nav-item {
+					margin       : 0 auto;
+					margin-bottom: 25px;
+
+					&:first-child {
+						margin: 0 auto 25px;
+					}
+
+					.login {
+						.avatar {
+							display: block;
+						}
+					}
+				}
+			}
+
+			.list-logo,
+			.list-nav {
+				flex          : 0 0 100%;
+				max-width     : 100%;
+				flex-direction: column;
+				align-items   : flex-start;
+				height        : auto;
+				margin-top    : 25px;
 			}
 		}
 	}

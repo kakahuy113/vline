@@ -1,3 +1,9 @@
+body {
+	&.disabled {
+		overflow: hidden;
+	}
+}
+
 [hidden],
 .d-none,
 .hidden {

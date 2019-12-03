@@ -89,6 +89,14 @@ const SVG = () => {
 	});
 }
 
+function mobileMenu() {
+	$('.button-mobile').on('click', function() {
+		$(this).toggleClass('active');
+		$(this).parents('header').toggleClass('active');
+		$('body').toggleClass('disabled');
+	});
+}
+
 function checkItem() {
 	$('.block-vote .list-vote').each(function() {
 		let _this = $(this);
@@ -204,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	SVG();
 	checkItem();
 	checkCodeLogin();
+	mobileMenu();
 });
 
 // CHẠY KHI WINDOWN SCROLL
