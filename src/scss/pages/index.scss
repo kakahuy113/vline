@@ -185,6 +185,7 @@
 	}
 
 	@media (max-width: 1024.98px) {
+		padding-bottom: 50px;
 
 		.awards {
 			height     : auto;
@@ -200,7 +201,7 @@
 				padding-top    : 15px;
 
 				.block-item {
-					flex         : 0 0 80%;
+					flex         : 0 0 60%;
 					max-width    : 60%;
 					width        : 60%;
 					margin-bottom: 15px;
@@ -244,6 +245,9 @@
 		}
 
 		.block-vote {
+			&:nth-child(2) {
+				margin-top: 35px;
+			}
 
 			&:nth-child(6),
 			&:nth-child(7) {
@@ -253,6 +257,104 @@
 					.item-vote {
 						flex     : 0 0 33.3333333%;
 						max-width: 33.3333333%;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		padding-bottom: 25px;
+
+		.awards {
+			padding-top: 25px;
+
+			.list-awards {
+				margin-top: 15px;
+				padding   : 0 15px;
+
+				.block-item {
+					flex     : 0 0 100%;
+					max-width: 100%;
+					width    : 100%;
+					height   : 325px;
+
+					.item {
+						height: 100%;
+
+						.content {
+							margin: 15px 0;
+
+							.title-content {
+								font-size : 16px;
+								margin-top: 15px;
+							}
+
+							ul {
+								padding   : 0 25px;
+								width     : 100%;
+								margin-top: 20px;
+
+								li {
+									font-size    : 14px;
+									margin-bottom: 10px;
+								}
+							}
+						}
+					}
+
+					&:nth-child(2) {
+						flex     : 0 0 100%;
+						max-width: 100%;
+						width    : 100%;
+						height   : 325px;
+
+						.item {
+							height: 100%;
+
+							.content {
+								margin: 15px 0;
+
+								.title-content {
+									font-size : 16px;
+									margin-top: 15px;
+								}
+
+								ul {
+									padding   : 0 25px;
+									width     : 100%;
+									margin-top: 20px;
+
+									li {
+										font-size    : 14px;
+										margin-bottom: 10px;
+									}
+								}
+
+								.desc {
+									width      : 100%;
+									margin-top : 25px;
+									font-size  : 14px;
+									padding    : 0 25px;
+									line-height: 30px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.block-vote {
+
+			&:nth-child(6),
+			&:nth-child(7) {
+				max-width: 100%;
+
+				.list-vote {
+					.item-vote {
+						flex     : 50%;
+						max-width: 50%;
 					}
 				}
 			}
