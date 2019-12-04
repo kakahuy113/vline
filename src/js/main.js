@@ -100,11 +100,36 @@ function mobileMenu() {
 function checkItem() {
 	$('.block-vote .list-vote').each(function() {
 		let _this = $(this);
+		var flat = 0;
 		_this.find('.item-vote').on('click', function() {
 			_this.find('.item-vote').not(this).removeClass('checked')
 			$(this).addClass('checked');
-		})
+
+			$('.item-vote').each(function() {
+				if ($(this).hasClass('checked')) {
+					flat++;
+					if (flat == 6) {
+						checkCodeLogin();
+					} else {
+						$('#btn-vote').on('click', function() {
+							$('#form-thank .desc').html('<p>Vui lòng chọn đủ 6 hạng mục.</p><p></p><p></p><p></p>');
+							$.fancybox.open({
+								src: '#form-thank',
+								type: 'inline',
+								opts: {
+									hash: false,
+									closeExisting: true,
+								}
+							});
+						})
+					}
+				}
+			})
+		});
 	})
+
+
+
 }
 
 const checkCodeLogin = () => {
@@ -136,7 +161,7 @@ const checkCodeLogin = () => {
 
 				// NẾU CHƯA ĐĂNG NHẬP
 
-				// $('#form-thank .desc').html('<p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p><p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
+				// $('#form-thank .desc').html('<p>Bạn chưa đăng nhập.</p><p>Bạn vui lòng đăng nhập để tham gia sự kiện nhé</p><p></p><p></p>');
 				// $.fancybox.open({
 				// 	src: '#form-thank',
 				// 	type: 'inline',
@@ -157,7 +182,7 @@ const checkCodeLogin = () => {
 						}
 					})
 				} else {
-					$('#form-thank .desc').html(res.Messege);
+					$('#form-thank .desc').html('<p>Bạn chưa đăng nhập.</p><p>Bạn vui lòng đăng nhập để tham gia sự kiện nhé</p><p></p><p></p>');
 					$.fancybox.open({
 						src: '#form-thank',
 						type: 'inline',
@@ -201,7 +226,7 @@ const checkCodeLogin = () => {
 			// TEST
 			error: function(err) {
 				// $('btn-submit').attr('disabled', 'disabled')
-				// $('#form-thank .desc').html('<p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p><p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
+				// $('#form-thank .desc').html('<p>CẢM ƠN BẠN ĐÃ THAM GIA BÌNH CHỌN</p><p>CHO THẦN TƯỢNG CỦA MÌNH TẠI VLIVE AWARDS</p><p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
 				// $.fancybox.open({
 				// 	src: '#form-thank',
 				// 	type: 'inline',
@@ -213,7 +238,7 @@ const checkCodeLogin = () => {
 			},
 			success: function(res) {
 				$('btn-submit').attr('disabled', 'disabled')
-				$('#form-thank .desc').html(res.Messege);
+				$('#form-thank .desc').html('<p>CẢM ƠN BẠN ĐÃ THAM GIA BÌNH CHỌN</p><p>CHO THẦN TƯỢNG CỦA MÌNH TẠI VLIVE AWARDS</p><p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
 				$.fancybox.open({
 					src: '#form-thank',
 					type: 'inline',
@@ -239,7 +264,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	// SVG CONTROL
 	SVG();
 	checkItem();
-	checkCodeLogin();
 	mobileMenu();
 });
 
