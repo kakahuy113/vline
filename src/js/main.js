@@ -127,9 +127,6 @@ function checkItem() {
 			})
 		});
 	})
-
-
-
 }
 
 const checkCodeLogin = () => {
@@ -172,7 +169,7 @@ const checkCodeLogin = () => {
 				// });
 			},
 			success: function(res) {
-				if (res.Code === 200) {
+				if (res.code === 200) {
 					$.fancybox.open({
 						src: '#form-vote',
 						type: 'inline',
