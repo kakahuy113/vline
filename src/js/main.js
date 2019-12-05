@@ -133,9 +133,9 @@ const checkCodeLogin = () => {
 				},
 				// TEST
 				// error: function() {
-				// 	let resCode = 200;
-
-				// 	if (resCode == 200) {
+				// 	let resCode = 400;
+				// 	let resMessege = '<p>Bạn chưa đăng nhập.</p><p>Bạn vui lòng đăng nhập để tham gia sự kiện</p><p></p><p></p>';
+				// 	if (resCode === 200) {
 				// 		$.fancybox.open({
 				// 			src: '#form-vote',
 				// 			type: 'inline',
@@ -145,7 +145,7 @@ const checkCodeLogin = () => {
 				// 			}
 				// 		})
 				// 	} else {
-				// 		$('#form-thank .desc').html('<p>Bạn chưa đăng nhập.</p><p>Bạn vui lòng đăng nhập để tham gia sự kiện</p><p></p><p></p>');
+				// 		$('#form-thank .desc').html(resMessege);
 				// 		$.fancybox.open({
 				// 			src: '#form-thank',
 				// 			type: 'inline',
@@ -167,7 +167,7 @@ const checkCodeLogin = () => {
 							}
 						})
 					} else {
-						$('#form-thank .desc').html(res.Messege);
+						$('#form-thank .desc').html(res.Message);
 						$.fancybox.open({
 							src: '#form-thank',
 							type: 'inline',
@@ -233,7 +233,7 @@ const checkCodeLogin = () => {
 			// },
 			success: function(res) {
 				$('#btn-submit').attr('disabled', 'disabled')
-				$('#form-thank .desc').html(res.Messege);
+				$('#form-thank .desc').html(res.Message);
 				$.fancybox.open({
 					src: '#form-thank',
 					type: 'inline',
