@@ -202,7 +202,6 @@ const checkCodeLogin = () => {
 		const Identity = document.getElementById('Form-Identity').value;
 		const Phone = document.getElementById('Form-Phone').value;
 		const Email = document.getElementById('Form-Email').value;
-		const Recaptcha = document.getElementById('recaptcha').value;
 
 		$('.block-vote .list-vote').each(function() {
 			let itemChecked = $(this).find('.item-vote.checked').attr('data-value');
@@ -218,7 +217,6 @@ const checkCodeLogin = () => {
 				Phone: Phone,
 				Email: Email,
 				Votes: Votes,
-				Recaptcha: Recaptcha,
 			},
 			// TEST
 			// error: function(err) {
