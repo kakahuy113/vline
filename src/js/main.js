@@ -147,14 +147,14 @@ const checkCodeLogin = () => {
 			error: function() {
 				// NẾU ĐÃ ĐĂNG NHẬP RỒI
 
-				// $.fancybox.open({
-				// 	src: '#form-vote',
-				// 	type: 'inline',
-				// 	opts: {
-				// 		hash: false,
-				// 		closeExisting: true,
-				// 	}
-				// })
+				$.fancybox.open({
+					src: '#form-vote',
+					type: 'inline',
+					opts: {
+						hash: false,
+						closeExisting: true,
+					}
+				})
 
 				// NẾU CHƯA ĐĂNG NHẬP
 
