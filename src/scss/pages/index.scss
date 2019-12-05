@@ -293,12 +293,14 @@
 			&:nth-child(7) {
 				max-width: 100%;
 
-				.list-vote {
-					justify-content: flex-start;
+				.row-wrapper {
+					.list-vote {
+						justify-content: flex-start;
 
-					.item-vote {
-						flex     : 0 0 33.3333333%;
-						max-width: 33.3333333%;
+						.item-vote {
+							flex     : 0 0 33.3333333%;
+							max-width: 33.3333333%;
+						}
 					}
 				}
 			}
@@ -393,10 +395,12 @@
 			&:nth-child(7) {
 				max-width: 100%;
 
-				.list-vote {
-					.item-vote {
-						flex     : 50%;
-						max-width: 50%;
+				.row-wrapper {
+					.list-vote {
+						.item-vote {
+							flex     : 50%;
+							max-width: 50%;
+						}
 					}
 				}
 			}
