@@ -97,32 +97,21 @@ function mobileMenu() {
 	});
 }
 
+var flat = 0;
+
 function checkItem() {
 	$('.block-vote .list-vote').each(function() {
+
 		let _this = $(this);
-		var flat = 0;
+
 		_this.find('.item-vote').on('click', function() {
+
 			_this.find('.item-vote').not(this).removeClass('checked')
 			$(this).addClass('checked');
 
 			$('.item-vote').each(function() {
 				if ($(this).hasClass('checked')) {
 					flat++;
-					if (flat == 6) {
-						checkCodeLogin();
-					} else {
-						$('#btn-vote').on('click', function() {
-							$('#form-thank .desc').html('<p>Vui lòng chọn đủ 6 hạng mục.</p><p></p><p></p><p></p>');
-							$.fancybox.open({
-								src: '#form-thank',
-								type: 'inline',
-								opts: {
-									hash: false,
-									closeExisting: true,
-								}
-							});
-						})
-					}
 				}
 			})
 		});
@@ -131,73 +120,82 @@ function checkItem() {
 
 const checkCodeLogin = () => {
 	$('body').on('click', '#btn-vote', function(e) {
-		const code = document.getElementById('session-code').value;
-		const url = document.getElementById('btn-vote').getAttribute('data-url');
-		e.preventDefault();
-		$.ajax({
-			url: url,
-			type: 'POST',
-			data: {
-				code: code
-			},
-			beforeSend: function(e) {
-				$('.index-4 #btn-vote').attr('disabled', 'disabled')
-			},
-			// TEST
-			error: function() {
-				// NẾU ĐÃ ĐĂNG NHẬP RỒI
+		// LẤY SỐ LƯỢNG ITEM ĐÃ ĐƯỢC CHECK
+		const voteCount = $('.block-vote .list-vote .item-vote.checked').length;
+		if (voteCount === 6) {
+			const url = document.getElementById('btn-vote').getAttribute('data-url');
+			$.ajax({
+				url: url,
+				type: 'POST',
+				data: {},
+				beforeSend: function(e) {
+					$('.index-4 #btn-vote').attr('disabled', 'disabled')
+				},
+				// TEST
+				// error: function() {
+				// 	let resCode = 200;
 
-				// $.fancybox.open({
-				// 	src: '#form-vote',
-				// 	type: 'inline',
-				// 	opts: {
-				// 		hash: false,
-				// 		closeExisting: true,
+				// 	if (resCode == 200) {
+				// 		$.fancybox.open({
+				// 			src: '#form-vote',
+				// 			type: 'inline',
+				// 			opts: {
+				// 				hash: false,
+				// 				closeExisting: true,
+				// 			}
+				// 		})
+				// 	} else {
+				// 		$('#form-thank .desc').html('<p>Bạn chưa đăng nhập.</p><p>Bạn vui lòng đăng nhập để tham gia sự kiện</p><p></p><p></p>');
+				// 		$.fancybox.open({
+				// 			src: '#form-thank',
+				// 			type: 'inline',
+				// 			opts: {
+				// 				hash: false,
+				// 				closeExisting: true,
+				// 			}
+				// 		});
 				// 	}
-				// })
-
-				// NẾU CHƯA ĐĂNG NHẬP
-
-				// $('#form-thank .desc').html('<p>Bạn chưa đăng nhập.</p><p>Bạn vui lòng đăng nhập để tham gia sự kiện nhé</p><p></p><p></p>');
-				// $.fancybox.open({
-				// 	src: '#form-thank',
-				// 	type: 'inline',
-				// 	opts: {
-				// 		hash: false,
-				// 		closeExisting: true,
-				// 	}
-				// });
-			},
-			success: function(res) {
-				if (res.Code === 200) {
-					$.fancybox.open({
-						src: '#form-vote',
-						type: 'inline',
-						opts: {
-							hash: false,
-							closeExisting: true,
-						}
-					})
-				} else {
-					$('#form-thank .desc').html('<p>Bạn chưa đăng nhập.</p><p>Bạn vui lòng đăng nhập để tham gia sự kiện nhé</p><p></p><p></p>');
-					$.fancybox.open({
-						src: '#form-thank',
-						type: 'inline',
-						opts: {
-							hash: false,
-							closeExisting: true,
-						}
-					});
+				// },
+				success: function(res) {
+					if (res.Code === 200) {
+						$.fancybox.open({
+							src: '#form-vote',
+							type: 'inline',
+							opts: {
+								hash: false,
+								closeExisting: true,
+							}
+						})
+					} else {
+						$('#form-thank .desc').html('<p>Bạn chưa đăng nhập.</p><p>Bạn vui lòng đăng nhập để tham gia sự kiện</p><p></p><p></p>');
+						$.fancybox.open({
+							src: '#form-thank',
+							type: 'inline',
+							opts: {
+								hash: false,
+								closeExisting: true,
+							}
+						});
+					}
+				},
+				complete: function(response) {
+					$('.index-4 #btn-vote').removeAttr('disabled')
 				}
-			},
-			complete: function(response) {
-				$('.index-4 #btn-vote').removeAttr('disabled')
-			}
-		})
+			})
+		} else {
+			$('#form-thank .desc').html('<p>Bạn chưa chọn bất kì hạng mục nào</p><p>Hoặc bạn chưa chọn đủ các hạng mục</p><p></p><p></p>');
+			$.fancybox.open({
+				src: '#form-thank',
+				type: 'inline',
+				opts: {
+					hash: false,
+					closeExisting: true,
+				}
+			});
+		}
 	})
 
 	$('body').on('click', '#btn-submit', function(e) {
-		e.preventDefault();
 		const Votes = [];
 		const url = document.getElementById('btn-submit').getAttribute('data-url');
 		const Name = document.getElementById('Form-Name').value;
@@ -221,21 +219,21 @@ const checkCodeLogin = () => {
 				Votes: Votes
 			},
 			// TEST
-			error: function(err) {
-				// $('btn-submit').attr('disabled', 'disabled')
-				// $('#form-thank .desc').html('<p>CẢM ƠN BẠN ĐÃ THAM GIA BÌNH CHỌN</p><p>CHO THẦN TƯỢNG CỦA MÌNH TẠI VLIVE AWARDS</p><p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
-				// $.fancybox.open({
-				// 	src: '#form-thank',
-				// 	type: 'inline',
-				// 	opts: {
-				// 		hash: false,
-				// 		closeExisting: true,
-				// 	}
-				// });
-			},
+			// error: function(err) {
+			// 	$('btn-submit').attr('disabled', 'disabled')
+			// 	$('#form-thank .desc').html('<p>CẢM ƠN BẠN ĐÃ THAM GIA BÌNH CHỌN</p><p>CHO THẦN TƯỢNG CỦA MÌNH TẠI VLIVE AWARDS</p><p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
+			// 	$.fancybox.open({
+			// 		src: '#form-thank',
+			// 		type: 'inline',
+			// 		opts: {
+			// 			hash: false,
+			// 			closeExisting: true,
+			// 		}
+			// 	});
+			// },
 			success: function(res) {
 				$('btn-submit').attr('disabled', 'disabled')
-				$('#form-thank .desc').html('<p>CẢM ƠN BẠN ĐÃ THAM GIA BÌNH CHỌN</p><p>CHO THẦN TƯỢNG CỦA MÌNH TẠI VLIVE AWARDS</p><p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
+				$('#form-thank .desc').html(res.Messege);
 				$.fancybox.open({
 					src: '#form-thank',
 					type: 'inline',
@@ -262,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	SVG();
 	checkItem();
 	mobileMenu();
+	checkCodeLogin();
 });
 
 // CHẠY KHI WINDOWN SCROLL
