@@ -11,6 +11,7 @@ html(lang="en")
 		link(rel="stylesheet", href="./css/core.min.css")
 		link(rel="stylesheet", href="./css/main.min.css")
 	body
+		#fb-root
 		#loading
 			.logo-loader
 				img(src="./assets/images/logo.png", alt="")
@@ -65,5 +66,7 @@ html(lang="en")
 					img(src="./assets/images/logo.png", alt="", srcset="")
 				.desc
 		block scripts
+		script(async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0&appId=774359209430335&autoLogAppEvents=1")
+		script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
 		script(type="text/javascript", src="./js/core.min.js")
 		script(type="text/javascript", src="./js/main.min.js")

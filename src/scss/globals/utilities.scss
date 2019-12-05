@@ -201,6 +201,22 @@ body {
 						font-size  : 18px;
 						font-weight: 700;
 					}
+
+					.number-vote {
+						display        : flex;
+						justify-content: center;
+
+						p {
+							padding    : 0 10px;
+							font-weight: 700;
+						}
+
+						@media (max-width: 767.98px) {
+							p {
+								font-size: 13px;
+							}
+						}
+					}
 				}
 			}
 

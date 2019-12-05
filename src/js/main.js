@@ -252,6 +252,19 @@ const checkCodeLogin = () => {
 	})
 }
 
+function shareSocial() {
+	$('#facebook').click(function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		FB.ui({
+			method: 'share',
+			href: 'http://vliveawards.com/'
+		}, function(response) {});
+	})
+}
+
+
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	// LOADING
@@ -263,6 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	checkItem();
 	mobileMenu();
 	checkCodeLogin();
+	shareSocial();
 });
 
 // CHẠY KHI WINDOWN SCROLL
