@@ -167,7 +167,7 @@ const checkCodeLogin = () => {
 							}
 						})
 					} else {
-						$('#form-thank .desc').html('<p>Bạn chưa đăng nhập.</p><p>Bạn vui lòng đăng nhập để tham gia sự kiện</p><p></p><p></p>');
+						$('#form-thank .desc').html(res.Messege);
 						$.fancybox.open({
 							src: '#form-thank',
 							type: 'inline',
@@ -232,7 +232,7 @@ const checkCodeLogin = () => {
 			// 	});
 			// },
 			success: function(res) {
-				$('btn-submit').attr('disabled', 'disabled')
+				$('#btn-submit').attr('disabled', 'disabled')
 				$('#form-thank .desc').html(res.Messege);
 				$.fancybox.open({
 					src: '#form-thank',
@@ -244,7 +244,7 @@ const checkCodeLogin = () => {
 				});
 			},
 			complete: function() {
-				$('btn-submit').removeAttr('disabled')
+				$('#btn-submit').removeAttr('disabled')
 			}
 		})
 	})
