@@ -2,30 +2,36 @@
 .index-3 {
 	position: relative;
 
+	
+
+
 	figure {
 		height: 100%;
-	}
 
-	button {
-		position  : absolute;
-		top       : 50%;
-		left      : 50%;
-		transform : translate(-50%, -50%);
-		background: none;
-		border    : none;
+		button {
+			position  : absolute;
+			top       : 50%;
+			left      : 50%;
+			transform : translate(-50%, -50%);
+			background: none;
+			border    : none;
+		}
 	}
 
 	@media (max-width: 1024.98px) {
 		height: auto;
 
-		button {
-			svg {
-				width : 50%;
-				height: 50%;
+		figure {
+			button {
+				svg {
+					width : 50%;
+					height: 50%;
+				}
 			}
 		}
 	}
 }
+
 
 .index-4 {
 	width            : 100%;

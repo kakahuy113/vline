@@ -86,6 +86,21 @@ body {
 	overflow: visible;
 }
 
+.box-video {
+	width : 50%;
+	height: 70%;
+
+	@media (max-width: 1024.98px) {
+		width : 80%;
+		height: 80%;
+	}
+
+	@media (max-width: 767.98px) {
+		width : 95%;
+		height: 50%;
+	}
+}
+
 .fancybox-close-small {
 	opacity: 1;
 }

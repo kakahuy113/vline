@@ -261,8 +261,6 @@ function shareSocial() {
 	})
 }
 
-
-
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	// LOADING
