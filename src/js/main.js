@@ -133,7 +133,7 @@ const checkCodeLogin = () => {
 				},
 				// TEST
 				// error: function() {
-				// 	let resCode = 200;
+				// 	let resCode = 202;
 				// 	let resMessege = '<p>Bạn chưa đăng nhập.</p><p>Bạn vui lòng đăng nhập để tham gia sự kiện</p><p></p><p></p>';
 				// 	if (resCode === 200) {
 				// 		$.fancybox.open({
@@ -144,6 +144,18 @@ const checkCodeLogin = () => {
 				// 				closeExisting: true,
 				// 			}
 				// 		})
+				// 	} else if (resCode === 202) {
+				// 		$.ajax({
+				// 			type: "POST",
+				// 			url: url,
+				// 			data: {
+				// 				Nam: "ABC",
+				// 				Identit: '123456',
+				// 				Phon: '0987654321',
+				// 				Emai: 'a@abc.com',
+				// 			},
+				// 		});
+
 				// 	} else {
 				// 		$('#form-thank .desc').html(resMessege);
 				// 		$.fancybox.open({
@@ -166,8 +178,20 @@ const checkCodeLogin = () => {
 								closeExisting: true,
 							}
 						})
+					} else if (res.Code === 202) {
+						$.ajax({
+							type: "POST",
+							url: url,
+							data: {
+								Nam: "ABC",
+								Identit: '123456',
+								Phon: '0987654321',
+								Emai: 'a@abc.com',
+							},
+						});
+
 					} else {
-						$('#form-thank .desc').html(res.Message);
+						$('#form-thank .desc').html(res.Messege);
 						$.fancybox.open({
 							src: '#form-thank',
 							type: 'inline',
