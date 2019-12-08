@@ -239,7 +239,7 @@ const checkCodeLogin = () => {
 			success: function(res) {
 				$('#btn-submit').attr('disabled', 'disabled');
 				$('#form-thank .desc').html(res.Message);
-				if (resCode === 200) {
+				if (res.Code === 200) {
 					$.fancybox.open({
 						src: '#form-thank',
 						type: 'inline',
@@ -248,6 +248,7 @@ const checkCodeLogin = () => {
 							closeExisting: true,
 						}
 					});
+					$('.item-vote').removeClass('checked');
 				} else {
 					alert(res.Message)
 				}
@@ -256,17 +257,6 @@ const checkCodeLogin = () => {
 				$('#btn-submit').removeAttr('disabled')
 			}
 		})
-	})
-}
-
-function shareSocial() {
-	$('#facebook').click(function(event) {
-		event.preventDefault();
-		event.stopPropagation();
-		FB.ui({
-			method: 'share',
-			href: 'http://vliveawards.com/'
-		}, function(response) {});
 	})
 }
 
@@ -281,7 +271,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	checkItem();
 	mobileMenu();
 	checkCodeLogin();
-	shareSocial();
 });
 
 // CHẠY KHI WINDOWN SCROLL

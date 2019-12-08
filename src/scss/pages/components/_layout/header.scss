@@ -54,49 +54,50 @@ header {
 			align-items: center;
 
 			.nav-item {
+				display    : flex;
+				align-items: center;
+
 				&:first-child {
 					margin-left: auto;
 				}
 
-				.login {
-					display    : flex;
-					align-items: center;
+				.avatar {
+					padding-right: 15px;
 
-					.avatar {
-						position     : relative;
-						padding-right: 15px;
-						margin-right : 25px;
-
-						figure {
-							height       : 35px;
-							width        : 35px;
-							border-radius: 50%;
-							background   : #606060;
-							overflow     : hidden;
-						}
-
-						&:after {
-							content   : '';
-							position  : absolute;
-							right     : 0;
-							top       : 50%;
-							width     : 1px;
-							height    : 18px;
-							transform : translateY(-50%);
-							background: #707070;
-						}
+					figure {
+						height       : 35px;
+						width        : 35px;
+						border-radius: 50%;
+						background   : #606060;
+						overflow     : hidden;
 					}
+				}
+
+				.login {
+					position    : relative;
+					margin-right: 45px;
+					padding-left: 25px;
 
 					.name,
 					.button-login {
 						cursor: pointer;
 						color : #ffffff;
 					}
+
+					&:after {
+						content   : '';
+						position  : absolute;
+						left      : 0;
+						top       : 50%;
+						width     : 1px;
+						height    : 18px;
+						transform : translateY(-50%);
+						background: #707070;
+					}
 				}
 
 				.list-download {
-					display    : flex;
-					margin-left: 45px;
+					display: flex;
 
 					.item {
 						margin-right: 15px;

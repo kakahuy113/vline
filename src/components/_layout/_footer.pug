@@ -8,7 +8,9 @@ footer
 				p Chia sẻ liên kết
 				ul
 					li#facebook
-						img.svg(src="./assets/images/icons/facebook.svg", alt="", srcset="")
+						.fb-share-button(data-href='http://vliveawards.com/')
+							a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fvliveawards.com%2F&src=sdkpreparse')
+								img(src="./assets/images/icons/facebook", alt="", srcset="")
 					li
 						a(href="https://twitter.com/intent/tweet?text=Cùng%20tham%20gia%20sự%20nhé%20http://vliveawards.com/")
 							img.svg(src="./assets/images/icons/twitter.svg", alt="", srcset="")
