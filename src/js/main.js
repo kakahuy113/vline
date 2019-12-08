@@ -133,7 +133,7 @@ const checkCodeLogin = () => {
 				},
 				// TEST
 				// error: function() {
-				// 	let resCode = 400;
+				// 	let resCode = 200;
 				// 	let resMessege = '<p>Bạn chưa đăng nhập.</p><p>Bạn vui lòng đăng nhập để tham gia sự kiện</p><p></p><p></p>';
 				// 	if (resCode === 200) {
 				// 		$.fancybox.open({
@@ -220,28 +220,37 @@ const checkCodeLogin = () => {
 			},
 			// TEST
 			// error: function(err) {
-			// 	$('btn-submit').attr('disabled', 'disabled')
-			// 	$('#form-thank .desc').html('<p>CẢM ƠN BẠN ĐÃ THAM GIA BÌNH CHỌN</p><p>CHO THẦN TƯỢNG CỦA MÌNH TẠI VLIVE AWARDS</p><p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
-			// 	$.fancybox.open({
-			// 		src: '#form-thank',
-			// 		type: 'inline',
-			// 		opts: {
-			// 			hash: false,
-			// 			closeExisting: true,
-			// 		}
-			// 	});
+			// 	let resCode = 200;
+			// 	let resMessage = "Sai rồi"
+			// 	if (resCode === 200) {
+			// 		$('#form-thank .desc').html('<p>CẢM ƠN BẠN ĐÃ THAM GIA BÌNH CHỌN</p><p>CHO THẦN TƯỢNG CỦA MÌNH TẠI VLIVE AWARDS</p><p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
+			// 		$.fancybox.open({
+			// 			src: '#form-thank',
+			// 			type: 'inline',
+			// 			opts: {
+			// 				hash: false,
+			// 				closeExisting: true,
+			// 			}
+			// 		});
+			// 	} else {
+			// 		alert(resMessage)
+			// 	}
 			// },
 			success: function(res) {
-				$('#btn-submit').attr('disabled', 'disabled')
+				$('#btn-submit').attr('disabled', 'disabled');
 				$('#form-thank .desc').html(res.Message);
-				$.fancybox.open({
-					src: '#form-thank',
-					type: 'inline',
-					opts: {
-						hash: false,
-						closeExisting: true,
-					}
-				});
+				if (resCode === 200) {
+					$.fancybox.open({
+						src: '#form-thank',
+						type: 'inline',
+						opts: {
+							hash: false,
+							closeExisting: true,
+						}
+					});
+				} else {
+					alert(res.Message)
+				}
 			},
 			complete: function() {
 				$('#btn-submit').removeAttr('disabled')
