@@ -268,8 +268,3 @@ document.addEventListener('DOMContentLoaded', () => {
 	checkCodeLogin();
 	autoLogin();
 });
-
-// CHẠY KHI WINDOWN SCROLL
-window.addEventListener('scroll', () => {
-	// ACTIVE HEADER WHEN SCROLL
-})
