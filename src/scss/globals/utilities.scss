@@ -441,10 +441,12 @@ body {
 }
 
 .form-thank {
-	padding         : 45px 120px 75px;
-	background-image: url(../assets/images/index/bg-block-thank.png);
-	border-radius   : 10px;
-	width           : 840px;
+	padding          : 45px 120px 75px;
+	background-image : url(../assets/images/index/bg-block-thank.png);
+	background-size  : cover;
+	background-repeat: no-repeat;
+	border-radius    : 10px;
+	width            : 840px;
 
 	.logo {
 		margin-bottom: 15px;

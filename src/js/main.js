@@ -1,6 +1,6 @@
 // import here !!!
 import loading from './loading';
-
+import ImageMapCanvas from "./ImageMapCanvas";
 
 // Script Cho Tab
 class Tab {
@@ -319,6 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	mobileMenu();
 	checkCodeLogin();
 	autoLogin();
+	imageMapCanvas();
 });
 
 // CHẠY KHI WINDOWN SCROLL
