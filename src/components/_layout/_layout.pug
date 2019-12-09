@@ -64,6 +64,19 @@ html(lang="en")
 				.logo
 					img(src="./assets/images/logo.png", alt="", srcset="")
 				.desc
+		input#checkLogin(type='text' value='true')
+		.d-none
+			.form-thank#auto-login(url-redirect="/")
+				.logo
+					img(src="./assets/images/logo.png", alt="", srcset="")
+				.desc
+					p Bạn sẽ được chuyển đến trang đăng nhập trong vòng 
+						span.count 0
+				.lits-button
+					.btn
+						button(data-fancybox-close) Hủy bỏ
+					.btn
+						a(href="#") Đi ngay
 		block scripts
 		script(async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0&appId=774359209430335" charset="utf-8")
 		script(type="text/javascript", src="./js/core.min.js")

@@ -472,6 +472,11 @@ body {
 		}
 	}
 
+	.lits-button {
+		margin-top: 50px;
+		display   : flex;
+	}
+
 	@media (max-width: 1024.98px) {
 		width  : 90%;
 		padding: 20px;

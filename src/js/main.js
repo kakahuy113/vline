@@ -145,17 +145,20 @@ const checkCodeLogin = () => {
 				// 			}
 				// 		})
 				// 	} else if (resCode === 202) {
-				// 		$.ajax({
-				// 			type: "POST",
-				// 			url: url,
-				// 			data: {
-				// 				Nam: "ABC",
-				// 				Identit: '123456',
-				// 				Phon: '0987654321',
-				// 				Emai: 'a@abc.com',
-				// 			},
-				// 		});
 
+				// 		$('#Form-Name').val('ABC');
+				// 		$('#Form-Identity').val('123456');
+				// 		$('#Form-Phone').val('0987654321');
+				// 		$('#Form-Email').val('a@abc.com');
+
+				// 		$.fancybox.open({
+				// 			src: '#form-vote',
+				// 			type: 'inline',
+				// 			opts: {
+				// 				hash: false,
+				// 				closeExisting: true,
+				// 			}
+				// 		})
 				// 	} else {
 				// 		$('#form-thank .desc').html(resMessege);
 				// 		$.fancybox.open({
@@ -179,17 +182,19 @@ const checkCodeLogin = () => {
 							}
 						})
 					} else if (res.Code === 202) {
-						$.ajax({
-							type: "POST",
-							url: url,
-							data: {
-								Nam: "ABC",
-								Identit: '123456',
-								Phon: '0987654321',
-								Emai: 'a@abc.com',
-							},
-						});
+						$('#Form-Name').val('ABC');
+						$('#Form-Identity').val('123456');
+						$('#Form-Phone').val('0987654321');
+						$('#Form-Email').val('a@abc.com');
 
+						$.fancybox.open({
+							src: '#form-vote',
+							type: 'inline',
+							opts: {
+								hash: false,
+								closeExisting: true,
+							}
+						})
 					} else {
 						$('#form-thank .desc').html(res.Messege);
 						$.fancybox.open({
@@ -222,10 +227,10 @@ const checkCodeLogin = () => {
 	$('body').on('click', '#btn-submit', function(e) {
 		const Votes = [];
 		const url = document.getElementById('btn-submit').getAttribute('data-url');
-		const Name = document.getElementById('Form-Name').value;
-		const Identity = document.getElementById('Form-Identity').value;
-		const Phone = document.getElementById('Form-Phone').value;
-		const Email = document.getElementById('Form-Email').value;
+		const Name = $('#Form-Name').val();
+		const Identity = $('#Form-Identity').val();
+		const Phone = $('#Form-Phone').val();
+		const Email = $('#Form-Email').val();
 
 		$('.block-vote .list-vote').each(function() {
 			let itemChecked = $(this).find('.item-vote.checked').attr('data-value');
@@ -284,6 +289,39 @@ const checkCodeLogin = () => {
 	})
 }
 
+function autoLogin() {
+
+	let checkLogin = $('#checkLogin').val();
+
+	if (checkLogin == 'false') {
+		$.fancybox.open({
+			src: '#auto-login',
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExisting: true,
+			}
+		});
+
+		let closed = 1;
+		let flat = 0;
+		const url_redirect = $('#auto-login').attr('url-redirect');
+
+		$('#auto-login button[data-fancybox-close]').on('click', function() {
+			closed = 2;
+		})
+
+		setInterval(() => {
+			flat++
+			$('#auto-login .count').html(flat);
+
+			if (flat === 5 && closed === 1) {
+				window.location = url_redirect;
+			}
+		}, 1000);
+	}
+}
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	// LOADING
@@ -295,6 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	checkItem();
 	mobileMenu();
 	checkCodeLogin();
+	autoLogin();
 });
 
 // CHẠY KHI WINDOWN SCROLL
