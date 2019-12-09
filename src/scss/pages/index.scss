@@ -486,4 +486,8 @@
 	area {
 		cursor: pointer;
 	}
+
+	@media (max-width: 1440px) {
+		pointer-events: none;
+	}
 }
