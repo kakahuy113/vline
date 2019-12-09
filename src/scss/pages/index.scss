@@ -483,7 +483,6 @@
 }
 
 .index-5 {
-	position: relative;
 
 	.map-canvas {
 		position: absolute;
@@ -496,14 +495,5 @@
 		area {
 			cursor: pointer;
 		}
-	}
-
-	.map-image {
-		position: absolute;
-		top     : 0;
-		left    : 0;
-		z-index : 5;
-		width   : 100%;
-		height  : 100%;
 	}
 }

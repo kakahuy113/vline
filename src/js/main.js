@@ -289,7 +289,7 @@ function autoLogin() {
 		});
 
 		let closed = 1;
-		let flat = 0;
+		let flat = 5;
 		const url_redirect = $('#auto-login').attr('url-redirect');
 
 		$('#auto-login button[data-fancybox-close]').on('click', function() {
@@ -297,10 +297,10 @@ function autoLogin() {
 		})
 
 		setInterval(() => {
-			flat++
+			flat--
 			$('#auto-login .count').html(flat);
 
-			if (flat === 5 && closed === 1) {
+			if (flat === 0 && closed === 1) {
 				window.location = url_redirect;
 			}
 		}, 1000);
@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	mobileMenu();
 	checkCodeLogin();
 	autoLogin();
-	imageMapCanvas();
+	new ImageMapCanvas('.index-5 .imageMapCanvas')
 });
 
 // CHẠY KHI WINDOWN SCROLL
