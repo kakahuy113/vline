@@ -150,15 +150,8 @@ const checkCodeLogin = () => {
 				// 		$('#Form-Identity').val('123456');
 				// 		$('#Form-Phone').val('0987654321');
 				// 		$('#Form-Email').val('a@abc.com');
+				// 		$('#form-vote #btn-submit').trigger('click');
 
-				// 		$.fancybox.open({
-				// 			src: '#form-vote',
-				// 			type: 'inline',
-				// 			opts: {
-				// 				hash: false,
-				// 				closeExisting: true,
-				// 			}
-				// 		})
 				// 	} else {
 				// 		$('#form-thank .desc').html(resMessege);
 				// 		$.fancybox.open({
@@ -186,15 +179,7 @@ const checkCodeLogin = () => {
 						$('#Form-Identity').val('123456');
 						$('#Form-Phone').val('0987654321');
 						$('#Form-Email').val('a@abc.com');
-
-						$.fancybox.open({
-							src: '#form-vote',
-							type: 'inline',
-							opts: {
-								hash: false,
-								closeExisting: true,
-							}
-						})
+						$('#form-vote #btn-submit').trigger('click');
 					} else {
 						$('#form-thank .desc').html(res.Messege);
 						$.fancybox.open({
