@@ -258,13 +258,14 @@ function autoLogin() {
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	// LOADING
-	loading();
-	// WOW
-	new WOW().init();
-	// SVG CONTROL
-	SVG();
-	checkItem();
-	mobileMenu();
-	checkCodeLogin();
-	autoLogin();
+	loading().then(() => {
+		// SVG CONTROL
+		SVG();
+		checkItem();
+		mobileMenu();
+		checkCodeLogin();
+		autoLogin();
+		// WOW
+		new WOW().init();
+	});
 });
