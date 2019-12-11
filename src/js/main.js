@@ -255,8 +255,12 @@ function autoLogin() {
 	}
 }
 
+const imageMap = () => {
+}
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
+	$('map').imageMapResize();
 	// LOADING
 	loading().then(() => {
 		// SVG CONTROL
@@ -265,6 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		mobileMenu();
 		checkCodeLogin();
 		autoLogin();
+		imageMap();
 		// WOW
 		new WOW().init();
 	});

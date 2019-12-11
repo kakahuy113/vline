@@ -10,7 +10,7 @@
 			"bower_components/wow/dist/wow.js",
 			"bower_components/jquery/dist/jquery.js",
 			"bower_components/fancybox/dist/jquery.fancybox.js",
-			"bower_components/image-map-resizer/js/imageMapResizer.js"
+			"node_modules/image-map-resizer/js/imageMapResizer.js"
 		],
 		"css": [
 			"bower_components/wow/css/libs/animate.css",
