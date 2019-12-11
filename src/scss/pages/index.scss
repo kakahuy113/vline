@@ -252,8 +252,19 @@
 		}
 	}
 
+	// LAP TOP NHỎ -> DƯỚI 1440px
 	@media (max-width: 1439.98px) {
 		.block-vote {
+			.row-wrapper {
+				.list-vote {
+					justify-content: center;
+
+					.item-vote {
+						flex     : 0 0 33.333333%;
+						max-width: 33.333333%;
+					}
+				}
+			}
 
 			&:nth-child(2),
 			&:nth-child(4),
@@ -264,8 +275,8 @@
 						justify-content: center;
 
 						.item-vote {
-							flex     : 0 0 233px;
-							max-width: 233px;
+							flex     : 0 0 33.333333%;
+							max-width: 33.333333%;
 						}
 					}
 				}
@@ -273,25 +284,7 @@
 		}
 	}
 
-	@media (max-width:1199.98px) {
-		.block-vote {
-
-			&:nth-child(2),
-			&:nth-child(4),
-			&:nth-child(6),
-			&:nth-child(7) {
-				.row-wrapper {
-					.list-vote {
-						.item-vote {
-							flex     : 0 0 203px;
-							max-width: 203px;
-						}
-					}
-				}
-			}
-		}
-	}
-
+	// TABLET
 	@media (max-width: 1024.98px) {
 		padding-bottom: 50px;
 
@@ -390,6 +383,7 @@
 		}
 	}
 
+	// MOBILE
 	@media (max-width: 767.98px) {
 		padding-bottom: 25px;
 
