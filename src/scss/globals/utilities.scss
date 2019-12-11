@@ -174,16 +174,8 @@ body {
 	margin-top: 45px;
 
 	.list-vote {
-		margin        : 30px -27.5px 0;
-		padding-bottom: 25px;
-		border-bottom : 1px solid rgba($color:#565656, $alpha: .1);
 
 		.item-vote {
-			cursor       : pointer;
-			padding      : 0 27.5px;
-			flex         : 0 0 20%;
-			max-width    : 20%;
-			margin-bottom: 45px;
 
 			&.checked {
 				figure {
@@ -229,6 +221,18 @@ body {
 						font-size     : 18px;
 						font-weight   : 700;
 						text-transform: uppercase;
+
+						@media (max-width: 1439.98px) {
+							font-size: 14px;
+						}
+
+						@media (max-width: 1199.98px) {
+							font-size: 12px;
+						}
+
+						@media (max-width: 1024.98px) {
+							font-size: 18px;
+						}
 					}
 
 					.number-vote {
@@ -238,16 +242,12 @@ body {
 						p {
 							padding    : 0 10px;
 							font-weight: 700;
-						}
 
-						@media (max-width: 1199.98px) {
-							p {
+							@media (max-width: 1199.98px) {
 								font-size: 13px;
 							}
-						}
 
-						@media (max-width: 1024.98px) {
-							p {
+							@media (max-width: 1024.98px) {
 								font-size: 16px;
 							}
 						}
@@ -265,9 +265,19 @@ body {
 		}
 	}
 
-	@media (max-width: 1024.98px) {
-		margin-top: 15px;
+	@media (max-width: 1600px) {
+		.list-vote {
+			.item-vote {
+				figure {
+					figcaption {
+						margin-top: 15px;
+					}
+				}
+			}
+		}
+	}
 
+	@media (max-width: 1024.98px) {
 		.list-vote {
 			margin: 30px -15px 0;
 
