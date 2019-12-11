@@ -255,8 +255,7 @@ function autoLogin() {
 	}
 }
 
-const imageMap = () => {
-}
+const imageMap = () => {}
 
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
