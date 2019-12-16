@@ -201,19 +201,16 @@ const checkCodeLogin = () => {
 			success: function(res) {
 				$('#btn-submit').attr('disabled', 'disabled');
 				$('#form-thank .desc').html(res.Message);
-				if (res.Code === 200) {
-					$.fancybox.open({
-						src: '#form-thank',
-						type: 'inline',
-						opts: {
-							hash: false,
-							closeExisting: true,
-						}
-					});
-					$('.item-vote').removeClass('checked');
-				} else {
-					alert(res.Message)
-				}
+				$.fancybox.open({
+					src: '#form-thank',
+					type: 'inline',
+					opts: {
+						hash: false,
+						closeExisting: true,
+					}
+				});
+				$('.item-vote').removeClass('checked');
+
 			},
 			complete: function() {
 				$('#btn-submit').removeAttr('disabled')
@@ -246,6 +243,9 @@ function autoLogin() {
 
 		setInterval(() => {
 			flat--
+			if (flat < 0) {
+				flat = 0
+			}
 			$('#auto-login .count').html(flat);
 
 			if (flat === 0 && closed === 1) {
