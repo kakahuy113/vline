@@ -235,6 +235,7 @@ function autoLogin() {
 
 		let closed = 1;
 		let flat = 5;
+		let reload = true;
 		const url_redirect = $('#auto-login').attr('url-redirect');
 
 		$('#auto-login button[data-fancybox-close]').on('click', function() {
@@ -249,7 +250,12 @@ function autoLogin() {
 			$('#auto-login .count').html(flat);
 
 			if (flat === 0 && closed === 1) {
-				window.location = url_redirect;
+				if (reload) {
+					window.location = url_redirect;
+					reload = !reload;
+					console.log(1);
+					
+				}
 			}
 		}, 1000);
 	}
