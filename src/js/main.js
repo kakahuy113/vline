@@ -224,6 +224,7 @@ function autoLogin() {
 	let checkLogin = $('#checkLogin').val();
 
 	if (checkLogin == 'false') {
+		$('#form-thank .desc').html('<p>Vui lòng đăng nhập để bình chọn</p>')
 		$.fancybox.open({
 			src: '#auto-login',
 			type: 'inline',
@@ -253,8 +254,6 @@ function autoLogin() {
 				if (reload) {
 					window.location = url_redirect;
 					reload = !reload;
-					console.log(1);
-					
 				}
 			}
 		}, 1000);
