@@ -1,5 +1,6 @@
 // import here !!!
 import loading from './loading';
+import AccountController from './AccountController';
 
 // CONTROL SVG
 const SVG = () => {
@@ -79,39 +80,6 @@ const checkCodeLogin = () => {
 				beforeSend: function(e) {
 					$('.index-4 #btn-vote').attr('disabled', 'disabled')
 				},
-				// TEST
-				// error: function() {
-				// 	let resCode = 202;
-				// 	let resMessege = '<p>Bạn chưa đăng nhập.</p><p>Bạn vui lòng đăng nhập để tham gia sự kiện</p><p></p><p></p>';
-				// 	if (resCode === 200) {
-				// 		$.fancybox.open({
-				// 			src: '#form-vote',
-				// 			type: 'inline',
-				// 			opts: {
-				// 				hash: false,
-				// 				closeExisting: true,
-				// 			}
-				// 		})
-				// 	} else if (resCode === 202) {
-
-				// 		$('#Form-Name').val('ABC');
-				// 		$('#Form-Identity').val('123456');
-				// 		$('#Form-Phone').val('0987654321');
-				// 		$('#Form-Email').val('a@abc.com');
-				// 		$('#form-vote #btn-submit').trigger('click');
-
-				// 	} else {
-				// 		$('#form-thank .desc').html(resMessege);
-				// 		$.fancybox.open({
-				// 			src: '#form-thank',
-				// 			type: 'inline',
-				// 			opts: {
-				// 				hash: false,
-				// 				closeExisting: true,
-				// 			}
-				// 		});
-				// 	}
-				// },
 				success: function(res) {
 					if (res.Code === 200) {
 						$.fancybox.open({
@@ -180,24 +148,6 @@ const checkCodeLogin = () => {
 				Email: Email,
 				Votes: Votes,
 			},
-			// TEST
-			// error: function(err) {
-			// 	let resCode = 200;
-			// 	let resMessage = "Sai rồi"
-			// 	if (resCode === 200) {
-			// 		$('#form-thank .desc').html('<p>CẢM ƠN BẠN ĐÃ THAM GIA BÌNH CHỌN</p><p>CHO THẦN TƯỢNG CỦA MÌNH TẠI VLIVE AWARDS</p><p>Bạn đã hết lượt bình chọn hôm nay.</p><p>Bạn có thể tiếp tục vote từ 00:00 ngày mai.</p>');
-			// 		$.fancybox.open({
-			// 			src: '#form-thank',
-			// 			type: 'inline',
-			// 			opts: {
-			// 				hash: false,
-			// 				closeExisting: true,
-			// 			}
-			// 		});
-			// 	} else {
-			// 		alert(resMessage)
-			// 	}
-			// },
 			success: function(res) {
 				$('#btn-submit').attr('disabled', 'disabled');
 				$('#form-thank .desc').html(res.Message);
@@ -243,20 +193,20 @@ function autoLogin() {
 			closed = 2;
 		})
 
-		setInterval(() => {
-			flat--
-			if (flat < 0) {
-				flat = 0
-			}
-			$('#auto-login .count').html(flat);
+		// setInterval(() => {
+		// 	flat--
+		// 	if (flat < 0) {
+		// 		flat = 0
+		// 	}
+		// 	$('#auto-login .count').html(flat);
 
-			if (flat === 0 && closed === 1) {
-				if (reload) {
-					window.location = url_redirect;
-					reload = !reload;
-				}
-			}
-		}, 1000);
+		// 	if (flat === 0 && closed === 1) {
+		// 		if (reload) {
+		// 			window.location = url_redirect;
+		// 			reload = !reload;
+		// 		}
+		// 	}
+		// }, 1000);
 	}
 }
 
@@ -273,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		mobileMenu();
 		checkCodeLogin();
 		autoLogin();
+		AccountController();
 		imageMap();
 		// WOW
 		new WOW().init();
