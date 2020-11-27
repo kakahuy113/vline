@@ -16,7 +16,6 @@
   "dependencies": {
     "jquery": "3.4.1",
     "fancybox": "3.5.7",
-    "swiper": "4.5.0",
     "wow": "wowjs#^1.1.2",
     "image-map-resizer": "^1.0.10"
   }

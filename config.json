@@ -6,15 +6,15 @@
 			"src/fonts/**"
 		],
 		"js": [
-			"bower_components/swiper/dist/js/swiper.js",
 			"bower_components/wow/dist/wow.js",
 			"bower_components/jquery/dist/jquery.js",
 			"bower_components/fancybox/dist/jquery.fancybox.js",
-			"node_modules/image-map-resizer/js/imageMapResizer.js"
+			"node_modules/image-map-resizer/js/imageMapResizer.js",
+			"node_modules/swiper/js/swiper.min.js"
 		],
 		"css": [
 			"bower_components/wow/css/libs/animate.css",
-			"bower_components/swiper/dist/css/swiper.css",
+			"node_modules/swiper/css/swiper.min.css",
 			"bower_components/fancybox/dist/jquery.fancybox.css"
 		]
 	}

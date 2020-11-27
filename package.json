@@ -44,6 +44,7 @@
 		"vinyl-source-stream": "^2.0.0"
 	},
 	"dependencies": {
-		"image-map-resizer": "^1.0.10"
+		"image-map-resizer": "^1.0.10",
+		"swiper": "^5.4.5"
 	}
 }

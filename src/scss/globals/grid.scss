@@ -5,6 +5,18 @@
 	margin-right : auto;
 	margin-left  : auto;
 }
+.container-custom {
+	width        : 100%;
+	margin-right : auto;
+	position: relative;
+	margin-left  : auto;
+	@media (min-width: 1440px) {
+		&.size-1365px {
+			max-width: 1385px;
+		}
+		
+	}
+}
 
 @media (min-width: 1025px) {
 	.container {
@@ -20,8 +32,9 @@
 
 @media (min-width: 1440px) {
 	.container {
-		max-width: 1640px;
+		max-width: 1600px;
 	}
+
 }
 
 .container-fluid {

@@ -20,12 +20,12 @@ body {
 
 .btn {
 	cursor       : pointer;
-	max-width    : 256px;
+	max-width    : 550px;
 	width        : 100%;
 	margin       : 0 auto;
 	padding      : 3px;
-	background   : linear-gradient(to right, rgba(84, 246, 255, 1) 0%, rgba(241, 241, 244, 1) 48%, rgba(255, 120, 174, 1) 100%);
-	border-radius: 13px;
+	height: 114px;
+	border-radius: 60px;
 
 	&.shadow {
 		box-shadow: 0 16px 22px rgba($color: #000000, $alpha: .3);
@@ -33,19 +33,12 @@ body {
 
 	button,
 	a {
-		display      : block;
-		max-width    : 249px;
-		width        : 100%;
-		margin       : 0 auto;
-		font-size    : 21px;
+		display      : flex;
+		font-size    : 60px;
+		align-items: center;
 		font-weight  : 700;
-		color        : #ffffff !important;
-		background   : #1A1A1A;
-		line-height  : 67px;
-		border-radius: 10px;
-		border       : 0;
-		padding      : 0 50px;
-		text-align   : center;
+		height: 100%;
+		color        : #000000;
 	}
 
 	@media (max-width: 575.98px) {
@@ -134,40 +127,10 @@ body {
 	font-family    : 'object-fit: cover, object-position: center';
 }
 
-.title {
-	text-align: center;
-
-	h3 {
-		font-size  : 48px;
-		font-weight: 700;
-		color      : #1A1A1A;
-	}
-
-	p {
-		margin   : 0 auto;
-		font-size: 18px;
-		color    : rgba($color:#1A1A1A, $alpha: .7);
-	}
-
-	@media (max-width: 1024.98px) {
-		h3 {
-			font-size: 38px;
-		}
-	}
-
-	@media (max-width: 767.98px) {
-		h3 {
-			font-size: 28px;
-		}
-
-		p {
-			font-size: 14px;
-
-			br {
-				display: none;
-			}
-		}
-	}
+.vector {
+	margin-bottom: 30px;
+	margin-top: 30px;
+	
 }
 
 .block-vote {
@@ -181,7 +144,7 @@ body {
 				figure {
 					.box-img {
 						img {
-							border-radius: 10px;
+							border-radius: 30px;
 						}
 
 						&:after {
@@ -193,10 +156,13 @@ body {
 			}
 
 			figure {
+				position: relative;
+				border-radius: 30px;
+				overflow: hidden;
 				.box-img {
 					position     : relative;
 					width        : 100%;
-					border-radius: 10px;
+					border-radius: 30px;
 					overflow     : hidden;
 					box-shadow   : 0 3px 27px rgba($color:#54F7FF, $alpha: .4);
 
@@ -208,20 +174,27 @@ body {
 						width        : 100%;
 						height       : 100%;
 						border       : 5px solid #ffe600;
-						border-radius: 10px;
+						border-radius: 30px;
 						transition   : .3s all ease-in-out;
 					}
 				}
 
 				figcaption {
-					margin-top: 40px;
-
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					height: 50px;
+					background: linear-gradient(90deg , #7e2bf9 0%, #ff68da 100%);
+					display: flex;
+					align-items: center;
+					justify-content: center;
 					h5 {
 						text-align    : center;
-						font-size     : 18px;
+						font-size     : 30px;
 						font-weight   : 700;
 						text-transform: uppercase;
-
+						font-family: SFUIDisplay-Bold;
+						color: #000000;
 						@media (max-width: 1439.98px) {
 							font-size: 14px;
 						}
@@ -306,6 +279,27 @@ body {
 				margin-bottom: 15px;
 			}
 		}
+	}
+}
+
+.btn-selection {
+	background: linear-gradient(6deg , #ff05f0 0%,#fd71da 100%);
+	max-width: 238px;
+	width: 100%;
+	height: 74px;
+	margin: 0 auto;
+	button {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		background: none;
+		border: none;
+		font-family: SFUIDisplay-Black;
+		justify-content: center;
+		font-size: 40px;
+		color: #ffffff;
+		padding: 0 5px;
 	}
 }
 

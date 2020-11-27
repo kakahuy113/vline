@@ -29,8 +29,9 @@ body {
 	font-size       : 16px;
 	font-weight     : 400;
 	line-height     : 1.5;
-	color           : #1c1c1c;
-	background-color: #ffffff;
+	color           : #ffffff;
+	// background-color: #ffffff;
+	background: url(../assets/images/new-vline/bg-full.png) no-repeat;
 }
 
 [tabindex="-1"]:focus {

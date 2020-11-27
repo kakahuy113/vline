@@ -212,6 +212,21 @@ function autoLogin() {
 
 const imageMap = () => {}
 
+const bannerSwiper = () => {
+	const swiper = new Swiper(".index-1 .swiper-container" , {
+		slidesPerView: 1,
+		// loop: true,
+		// effect: 'fade',
+		navigation: {
+			nextEl: '.index-1 .swiper-button-next',
+			prevEl: '.index-1 .swiper-button-prev',
+		},
+		pagination: {
+			el: '.index-1 .swiper-pagination',
+			clickable: true
+		},
+	})
+}
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	$('map').imageMapResize();
@@ -221,10 +236,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		SVG();
 		checkItem();
 		mobileMenu();
-		checkCodeLogin();
-		autoLogin();
+		// checkCodeLogin();
+		// autoLogin();
 		AccountController();
 		imageMap();
+		bannerSwiper();
 		// WOW
 		new WOW().init();
 	});
