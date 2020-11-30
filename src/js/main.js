@@ -79,9 +79,25 @@ const checkCodeLogin = () => {
 		const voteCount = $('.block-vote .list-vote .item-vote.checked').length;
 		let checkLogin = $('#checkLogin').val();
 		let checVote = $('#checkVote').val();
+		if (voteCount < 5) {
+			const warning = $("#form-thank .title").attr("data-warning");
+			$("#form-thank .title p").text(`${warning}`)
+			$.fancybox.open({
+				src: '#form-thank',
+				type: 'inline',
+				opts: {
+					hash: false,
+					closeExisting: true,
+				}
+			})
+			
+		}
 		if (voteCount === 5 && checkLogin =='true') {
 			// const url = document.getElementById('btn-vote').getAttribute('data-url');
 			if(checVote == "true") {
+				$("#btn-submit").trigger("click");
+				const warning = $("#form-thank .title").attr("data-thank");
+				$("#form-thank .title p").text(`${warning}`)
 				$.fancybox.open({
 					src: '#form-thank',
 					type: 'inline',
@@ -168,7 +184,7 @@ const checkCodeLogin = () => {
 			let itemChecked = $(this).find('.item-vote.checked').attr('data-value');
 			Votes.push(itemChecked)
 		})
-
+		
 		$.ajax({
 			url: url,
 			type: 'POST',
@@ -204,8 +220,7 @@ function scrollToSection() {
         e.preventDefault();
         const scrollToNumber = $(this).attr('data-scroll-to');
         $('html,body').animate({
-                scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
-                    $('header').height(),
+                scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top 
             },
             1200
         );

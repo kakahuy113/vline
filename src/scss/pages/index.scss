@@ -13,9 +13,12 @@
 	.swiper-slide {
 		height: auto;
 		.padding-slide {
-			padding: 150px;
+			padding: 150px 0;
 			@media (max-width: 1024.98px) {
 				padding: 0;
+				.container {
+					padding: 0;
+				}
 			}
 		}
 		.img {
@@ -146,9 +149,12 @@
 
 .index-4 {
 	width            : 100%;
+	.selection__wrapper {
+		margin-bottom: 90px;
+	}
 	.logo-selection {
-		margin-top: 200px;
-		margin-bottom: 200px;
+		margin-top: 50px;
+		margin-bottom: 50px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -292,6 +298,9 @@
 	.block-vote {
 		padding-right: 27.5px;
 		padding-left : 27.5px;
+		&:first-child {
+			margin-top: 90px;
+		}
 		.title {
 			text-align: center;
 			margin-bottom: 20px;
@@ -346,7 +355,6 @@
 			.list-vote {
 				justify-content: center;
 				margin        : 30px -27.5px 0;
-				padding-bottom: 25px;
 				border-bottom : 1px solid rgba($color:#565656, $alpha: .1);
 
 				.item-vote {

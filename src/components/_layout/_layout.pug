@@ -29,7 +29,7 @@ html(lang="en")
 			include _footer.pug
 		.d-none
 			.form-login#form-thank
-				.title
+				.title(data-warning="VUI LÒNG CHỌN ĐỦ" data-thank="CẢM ƠN ĐÃ BÌNH CHỌN")
 					p CẢM ƠN BẠN ĐÃ BÌNH CHỌN
 				.sub-title
 					p Hãy quay lại vào ngày mai để tiếp tục bình chọn nhé
@@ -58,8 +58,8 @@ html(lang="en")
 							button#btn-submit.btn GỬI VÀ QUAY LẠI
 				.note
 					p *Mã vé tham dự sẽ được gửi qua điện thoại trong thời gian tới
-		input#checkLogin(type='text' hidden value='false')
-		input#checkVote(type='text' hidden value='false')
+		input#checkLogin(type='text' hidden value='true')
+		input#checkVote(type='text' hidden value='true')
 		.d-none
 			.form-login#auto-login(url-redirect="#")
 				.title

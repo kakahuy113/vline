@@ -13,6 +13,18 @@ footer {
 		background: url(../assets/images/new-vline/footer.png) no-repeat;
 		background-size: 100% 100%;
 	}
+	&::after {
+		content: "";
+		position: absolute;
+		pointer-events: none;
+		top: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		height: 30px;
+		background: url(../assets/images/new-vline/vector.png) no-repeat;
+		background-position: center center;
+	}
 	.copy-right {
 		align-self: flex-end;
 		padding   : 0 15px;
