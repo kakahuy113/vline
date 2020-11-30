@@ -28,57 +28,58 @@ html(lang="en")
 		block footer
 			include _footer.pug
 		.d-none
-			.form-vote#form-vote
-				.title-form NHẬP THÔNG TIN CÁ NHÂN
-				form(action="#")
-					.form-group
-						label Họ và tên
-							span *
-						.input-group
-							input#Form-Name(type="text" placeholder="Nhập thông tin")
-					.form-group
-						label Số CMND/ Thẻ Căn cước/ Hộ chiếu
-							span *
-						.input-group
-							input#Form-Identity(type="text" placeholder="Nhập thông tin")
-					.form-group
-						label Số điện thoại
-							span *
-						.input-group
-							input#Form-Phone(type="text" placeholder="Nhập thông tin")
-					.form-group
-						label Email
-							span *
-						.input-group
-							input#Form-Email(type="text" placeholder="Nhập địa chỉ Email")
-				.desc
-					ul
-						li Công ty TNHH Deloitte Việt Nam sẽ là đơn vị chịu trách nhiệm lựa chọn người chiến thắng một cách độc lập cho chương trình này.
-						li Bằng việc nhập thông tin tại các trường quy định và ấn nút “Hoàn tất”, bạn đã đồng ý cho phép VLIVE và công ty TNHH Deloitte sử dụng thông tin cá nhân của mình để lựa chọn người may mắn nhận vé tham gia V Heartbeat Year End Party 2019 Powered by Diana.
-						li VLIVE đảm bảo thông tin cá nhân của bạn sẽ không được chia sẻ cho bên thứ 3 nào khác ngoài Công ty TNHH Deloitte.
-				.note Thông tin cá nhân đã đăng ký sẽ không thể thay đổi. Vui lòng kiểm tra kỹ và điền chính xác thông tin này.
-				.btn
-					button#btn-submit(data-url="#") HOÀN THÀNH
+			.form-login#form-thank
+				.title
+					p CẢM ƠN BẠN ĐÃ BÌNH CHỌN
+				.sub-title
+					p Hãy quay lại vào ngày mai để tiếp tục bình chọn nhé
+				.button-info.common
+					button#login.btn QUAY LẠI
+				.note
+					p *Mã vé tham dự sẽ được gửi qua điện thoại trong thời gian tới
 		.d-none
-			.form-thank#form-thank
-				.logo
-					img(src="./assets/images/logo.png", alt="", srcset="")
-				.desc
-		input#checkLogin(type='text' hidden value='false')
+			.form-login#form-vote
+				.title
+					p CẢM ƠN BẠN ĐÃ BÌNH CHỌN
+				.sub-title
+					p Hãy quay lại vào ngày mai để tiếp tục bình chọn nhé
+				.title-form
+					p HÃY NHẬP ĐỦ THÔNG TIN
+					p ĐỂ CHÚNG TÔI GỬI MÃ VÉ V HEARTBEAT ĐẾN CÁC BẠN
+				.info
+					form(action="")
+						.name
+							input(type="text" id="name" placeholder="HỌ VÀ TÊN" )
+						.phone
+							input(type="text" id="phone" placeholder="SỐ ĐIỆN THOẠI" )
+						.cmnd
+							input(type="text" id="cmnd" placeholder="CMND/CCCD HOẶC SỐ THẺ HỌC SINH" )
+						.button-info.common
+							button#btn-submit.btn GỬI VÀ QUAY LẠI
+				.note
+					p *Mã vé tham dự sẽ được gửi qua điện thoại trong thời gian tới
+		input#checkLogin(type='text' hidden value='true')
 		.d-none
-			.form-thank#auto-login(url-redirect="#")
-				.logo
-					img(src="./assets/images/logo.png", alt="", srcset="")
-				.desc
-					p Bạn sẽ được chuyển đến trang đăng nhập trong vòng 
-						span.count 0
-				.lits-button
-					.btn
-						button(data-fancybox-close) Hủy bỏ
-					.btn.btn-google
-						a(href="#") Google
+			.form-login#auto-login(url-redirect="#")
+				.title
+					p ĐĂNG NHẬP
+				.login
+					form(action="")
+						.id
+							input(type="text" placeholder="ID" disabled)
+						.password
+							input(type="text" placeholder="MẬT KHẨU" disabled)
+						.button-login.common
+							button#login.btn ĐĂNG NHẬP
+						.forgot-pass
+							a(href="") Quên mật khẩu?
+				.register
+					.title 
+						p ĐĂNG KÝ
 					.btn.btn-facebook
-						a(href="#") Facebook
+						a(href="#") Sign up with FaceBook
+					.btn.btn-google
+						a(href="#") Sign up with google
 		block scripts
 		script(type="text/javascript", src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3')
 		script(src='https://apis.google.com/js/platform.js?onload=onLoadCallback')

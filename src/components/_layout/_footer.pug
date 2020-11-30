@@ -1,19 +1,26 @@
 footer
 	.container
 		.row
-			.copy-right.col-md-6
+			.list-social-media.col-md-8
+				p
+					!= "Tải ứng dụng <span>VLINE</span> tại"
+				.social__wrapper
+					ul
+						li.google
+							a(target='_blank', href='')
+								img(src="./assets/images/new-vline/google-store.png", alt="", srcset="")
+						li.apple
+							a(target='_blank', href='')
+								img(src="./assets/images/new-vline/app-store.png", alt="", srcset="")
+						li
+							a(target='_blank', href='')
+								img(src="./assets/images/new-vline/vline-footer.png", alt="", srcset="")
+						li
+							a(href="")
+								img(src="./assets/images/new-vline/facebook.png", alt="", srcset="")
+						li
+							a(href="#")
+								img(src="./assets/images/new-vline/insta.png", alt="", srcset="")
+			.copy-right.col-md-4
 				p Copyright © NAVER Vietnam Ltd.
 				p Privacy Policy Cookies Policy Terms of Use
-			.list-social-media.col-md-6
-				p Chia sẻ liên kết
-				ul
-					li#facebook
-						.fb-share-button(data-href='http://vliveawards.com/')
-							a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fvliveawards.com%2F&src=sdkpreparse')
-								img(src="./assets/images/icons/facebook.svg", alt="", srcset="")
-					li
-						a(href="https://twitter.com/intent/tweet?text=Cùng%20tham%20gia%20sự%20nhé%20http://vliveawards.com/")
-							img.svg(src="./assets/images/icons/twitter.svg", alt="", srcset="")
-					li
-						a(href="#")
-							img.svg(src="./assets/images/icons/instagram.svg", alt="", srcset="")

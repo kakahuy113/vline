@@ -55,14 +55,10 @@ body {
 
 .fancybox-slide--html {
 	.fancybox-close-small {
-		top          : -25px;
-		right        : -25px;
-		border-radius: 50%;
-		background   : linear-gradient(45deg, rgba(13, 19, 27, 1) 0%, rgba(70, 70, 90, 1) 100%);
-
+		padding: 0;
 		svg {
 			path {
-				fill: #707070;
+				fill: #000000;
 			}
 		}
 	}
@@ -144,7 +140,6 @@ body {
 				figure {
 					.box-img {
 						img {
-							border-radius: 30px;
 						}
 
 						&:after {
@@ -259,7 +254,6 @@ body {
 				max-width    : 33.3333333%;
 				padding      : 0 15px;
 				margin-bottom: 30px;
-
 				figure {
 					figcaption {
 						margin-top: 15px;
@@ -450,52 +444,170 @@ body {
 	}
 }
 
-.form-thank {
-	padding          : 45px 120px 75px;
-	background-image : url(../assets/images/index/bg-block-thank.png);
+.form-login {
+	background-image : url(../assets/images/new-vline/popup-bg.png);
 	background-size  : cover;
-	background-repeat: no-repeat;
-	border-radius    : 10px;
-	width            : 840px;
-
-	.logo {
-		margin-bottom: 15px;
-
-		img {
-			display: block;
-			margin : 0 auto;
+	// background-repeat: no-repeat;
+	max-width: 939px;
+	width: 100%;
+	&#form-vote,
+	&#form-thank {
+		max-width: 100%;
+		width: unset;
+		color: #000000;
+		text-align: center;
+		.sub-title {
+			font-size: 25px;
+			margin-bottom: 25px;
+		}
+		.title-form {
+			font-size: 25px;
+			margin-bottom: 10px;
+			font-family: SFUIDisplay-Bold;
+		}
+		form {
+			> div {
+				&::after {
+					content: none;
+				}
+			}
+			input {
+				text-align: center;
+			}
+		}
+		.common {
+			margin-bottom: 25px;
+		}
+		.note {
+			font-size: 18px;
 		}
 	}
-
-	.desc {
+	.title {
 		p {
 			text-align: center;
-			color     : #1A1A1A;
-			font-size : 24px;
-
-			&:nth-child(1),
-			&:nth-child(2) {
-				font-weight: 700;
-			}
-
-			&:nth-child(2) {
-				margin-bottom: 40px;
-			}
+			color: #000000;
+			font-size: 50px;
+			font-family: SFUIDisplay-Black;
 		}
 	}
-
-	.lits-button {
-		margin-top: 50px;
-		display   : flex;
+	.login {
+		border-bottom: 1px solid #000000;
+	
 	}
+		input {
+			height: 100%;
+			width: 100%;
+			background: #000000;
+			font-size: 25px;
+			padding-left: 10px;;
+			padding-right: 35px;
+			color: rgba($color: #ffffff, $alpha: .7);
+			border-radius: 10px;
+			
+		}
+		.id,
+		.password,
+		.name,	
+		.phone,
+		.cmnd {
+			height: 72px;
+			background: linear-gradient(-90deg , #eac722 0% , #f78354 51%, #fd28cb 100%);
+			margin-bottom: 10px;
+			border-radius: 5px;
+			overflow: hidden;
+			padding: 2px;
+			position: relative;
+			border-radius: 10px;
+			overflow: hidden;
+			max-width: 644px;
+			width: 100%;
+			margin: 0 auto;
+			&::after {
+				content: "";
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 10px;
+				z-index: 10;
+				background-size: contain;
+			}
+		}
+		.id {
+			&::after {
+				background: url(../assets/images/new-vline/id.png) no-repeat;
+			}
+		}
+		.password {
+			margin-bottom: 20px;
+			&::after {
+				background: url(../assets/images/new-vline/password.png) no-repeat;
+				width: 42px;
+			}
+		}
+		.common {
+			text-align: center;
+			margin-bottom: 10px;
+			button {
+				background: linear-gradient(-90deg , #eac722 0% , #f78354 25%, #fd28cb 53%,#6708ff 99%);
+				height: 82px;
+				max-width: fit-content;
+				border-radius: unset;
+				border: none;
+				font-size: 50px;
+				padding: 0 25px;
+				color: #ffffff;
+				font-family: SFUIDisplay-Black;
+			}
+		}
+		.forgot-pass {
+			text-align: center;
+			a {
+				color: #000000;
+				font-size: 23px;
+			}
+		}
+	.register {
+		max-width: 644px;
+		width: 100%;
+		margin: 0 auto;
+		.btn {
+			height: 73px;
+			border-radius: unset;
+			text-align: center;
+			max-width: 100%;
+			position: relative;
+			a {
+				color: #ffffff;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+				font-size: 25px;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				width: 43px;
+				height: 43px;
+				top: 50%;
+				left: 30px;
+				transform: translateY(-50%);
+			}
+		}
+		.btn-google {
+			background: #4285f4;
+			&::after {
+				background: url(../assets/images/new-vline/google.png) no-repeat;
+			}
 
-	@media (max-width: 1024.98px) {
-		width  : 90%;
-		padding: 20px;
-
-		.desc {
-			p {
-				font-size: 14px;
+		}
+		.btn-facebook {
+			margin-bottom: 10px;
+			background: #3b5998;
+			&::after {
+				background: url(../assets/images/new-vline/facebook-icon.png) no-repeat;
 			}
 		}
 	}

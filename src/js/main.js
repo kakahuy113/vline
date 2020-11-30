@@ -44,6 +44,12 @@ function mobileMenu() {
 		$(this).parents('header').toggleClass('active');
 		$('body').toggleClass('disabled');
 	});
+	$(".list-nav .login").on("click" , function() {
+		$.fancybox.open({
+			src: "#auto-login",
+			type: "inline"
+		})
+	})
 }
 
 var flat = 0;
@@ -71,49 +77,60 @@ const checkCodeLogin = () => {
 	$('body').on('click', '#btn-vote', function(e) {
 		// LẤY SỐ LƯỢNG ITEM ĐÃ ĐƯỢC CHECK
 		const voteCount = $('.block-vote .list-vote .item-vote.checked').length;
-		if (voteCount === 6) {
-			const url = document.getElementById('btn-vote').getAttribute('data-url');
-			$.ajax({
-				url: url,
-				type: 'POST',
-				data: {},
-				beforeSend: function(e) {
-					$('.index-4 #btn-vote').attr('disabled', 'disabled')
-				},
-				success: function(res) {
-					if (res.Code === 200) {
-						$.fancybox.open({
-							src: '#form-vote',
-							type: 'inline',
-							opts: {
-								hash: false,
-								closeExisting: true,
-							}
-						})
-					} else if (res.Code === 202) {
-						$('#Form-Name').val('ABC');
-						$('#Form-Identity').val('123456');
-						$('#Form-Phone').val('0987654321');
-						$('#Form-Email').val('a@abc.com');
-						$('#form-vote #btn-submit').trigger('click');
-					} else {
-						$('#form-thank .desc').html(res.Messege);
-						$.fancybox.open({
-							src: '#form-thank',
-							type: 'inline',
-							opts: {
-								hash: false,
-								closeExisting: true,
-							}
-						});
-					}
-				},
-				complete: function(response) {
-					$('.index-4 #btn-vote').removeAttr('disabled')
+		let checkLogin = $('#checkLogin').val();
+		let checVote = $('#checkVote').val();
+		if (voteCount === 5 && checkLogin =='true') {
+			// const url = document.getElementById('btn-vote').getAttribute('data-url');
+			$.fancybox.open({
+				src: '#form-vote',
+				type: 'inline',
+				opts: {
+					hash: false,
+					closeExisting: true,
 				}
 			})
-		} else {
-			$('#form-thank .desc').html('<p>Bạn chưa chọn bất kì hạng mục nào</p><p>Hoặc bạn chưa chọn đủ các hạng mục</p><p></p><p></p>');
+			// $.ajax({
+			// 	url: url,
+			// 	type: 'POST',
+			// 	data: {},
+			// 	beforeSend: function(e) {
+			// 		$('.index-4 #btn-vote').attr('disabled', 'disabled')
+			// 	},
+			// 	success: function(res) {
+			// 		if (res.Code === 200) {
+					
+			// 		} else if (res.Code === 202) {
+			// 			$('#Form-Name').val('ABC');
+			// 			$('#Form-Identity').val('123456');
+			// 			$('#Form-Phone').val('0987654321');
+			// 			$('#Form-Email').val('a@abc.com');
+			// 			$('#form-vote #btn-submit').trigger('click');
+			// 		} else {
+			// 			$('#form-thank .desc').html(res.Messege);
+			// 			$.fancybox.open({
+			// 				src: '#form-thank',
+			// 				type: 'inline',
+			// 				opts: {
+			// 					hash: false,
+			// 					closeExisting: true,
+			// 				}
+			// 			});
+			// 		}
+			// 	},
+			// 	complete: function(response) {
+			// 		$('.index-4 #btn-vote').removeAttr('disabled')
+			// 	}
+			// })
+		} else if (checkLogin == "false") {
+			$.fancybox.open({
+				src: '#auto-login',
+				type: 'inline',
+				opts: {
+					hash: false,
+					closeExisting: true,
+				}
+			})
+		} else if(checVote == "true") {
 			$.fancybox.open({
 				src: '#form-thank',
 				type: 'inline',
@@ -121,17 +138,29 @@ const checkCodeLogin = () => {
 					hash: false,
 					closeExisting: true,
 				}
-			});
+			})
 		}
+		// else {
+		// 	$('#form-thank .desc').html('<p>Bạn chưa chọn bất kì hạng mục nào</p><p>Hoặc bạn chưa chọn đủ các hạng mục</p><p></p><p></p>');
+		// 	$.fancybox.open({
+		// 		src: '#form-thank',
+		// 		type: 'inline',
+		// 		opts: {
+		// 			hash: false,
+		// 			closeExisting: true,
+		// 		}
+		// 	});
+		// }
 	})
 
 	$('body').on('click', '#btn-submit', function(e) {
+		e.preventDefault();
 		const Votes = [];
 		const url = document.getElementById('btn-submit').getAttribute('data-url');
-		const Name = $('#Form-Name').val();
-		const Identity = $('#Form-Identity').val();
-		const Phone = $('#Form-Phone').val();
-		const Email = $('#Form-Email').val();
+		const Name = $('#name').val();
+		const Phone = $('#phone').val();
+		const Identity = $('#cmnd').val();
+
 
 		$('.block-vote .list-vote').each(function() {
 			let itemChecked = $(this).find('.item-vote.checked').attr('data-value');
@@ -145,20 +174,20 @@ const checkCodeLogin = () => {
 				Name: Name,
 				Identity: Identity,
 				Phone: Phone,
-				Email: Email,
 				Votes: Votes,
 			},
 			success: function(res) {
 				$('#btn-submit').attr('disabled', 'disabled');
-				$('#form-thank .desc').html(res.Message);
-				$.fancybox.open({
-					src: '#form-thank',
-					type: 'inline',
-					opts: {
-						hash: false,
-						closeExisting: true,
-					}
-				});
+				if(res.Code == 200) {
+					$.fancybox.open({
+						src: '#form-thank',
+						type: 'inline',
+						opts: {
+							hash: false,
+							closeExisting: true,
+						}
+					});
+				}
 				$('.item-vote').removeClass('checked');
 
 			},
@@ -174,7 +203,6 @@ function autoLogin() {
 	let checkLogin = $('#checkLogin').val();
 
 	if (checkLogin == 'false') {
-		$('#form-thank .desc').html('<p>Vui lòng đăng nhập để bình chọn</p>')
 		$.fancybox.open({
 			src: '#auto-login',
 			type: 'inline',
@@ -184,14 +212,14 @@ function autoLogin() {
 			}
 		});
 
-		let closed = 1;
-		let flat = 5;
-		let reload = true;
-		const url_redirect = $('#auto-login').attr('url-redirect');
+		// let closed = 1;
+		// let flat = 5;
+		// let reload = true;
+		// const url_redirect = $('#auto-login').attr('url-redirect');
 
-		$('#auto-login button[data-fancybox-close]').on('click', function() {
-			closed = 2;
-		})
+		// $('#auto-login button[data-fancybox-close]').on('click', function() {
+		// 	closed = 2;
+		// })
 
 		// setInterval(() => {
 		// 	flat--
@@ -215,8 +243,11 @@ const imageMap = () => {}
 const bannerSwiper = () => {
 	const swiper = new Swiper(".index-1 .swiper-container" , {
 		slidesPerView: 1,
-		// loop: true,
+		loop: true,
 		// effect: 'fade',
+		autoplay: {
+			delay: 5000
+		},
 		navigation: {
 			nextEl: '.index-1 .swiper-button-next',
 			prevEl: '.index-1 .swiper-button-prev',
@@ -236,8 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		SVG();
 		checkItem();
 		mobileMenu();
-		// checkCodeLogin();
-		// autoLogin();
+		checkCodeLogin();
+		autoLogin();
 		AccountController();
 		imageMap();
 		bannerSwiper();

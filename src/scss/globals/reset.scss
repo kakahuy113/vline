@@ -32,6 +32,8 @@ body {
 	color           : #ffffff;
 	// background-color: #ffffff;
 	background: url(../assets/images/new-vline/bg-full.png) no-repeat;
+	background-size: cover;
+    background-position: center center;
 }
 
 [tabindex="-1"]:focus {

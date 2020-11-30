@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1144" height="219" viewBox="0 0 1144 219">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #f0f;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="392" y="1843" width="1144" height="219" filterUnits="userSpaceOnUse">
+      <feGaussianBlur result="blur" stdDeviation="5.333" in="SourceAlpha"/>
+      <feComposite result="composite"/>
+      <feComposite result="composite-2"/>
+      <feComposite result="composite-3"/>
+      <feFlood result="flood" flood-color="#f161fe" flood-opacity="0.57"/>
+      <feComposite result="composite-4" operator="in" in2="composite-3"/>
+      <feBlend result="blend" mode="lighterColor" in2="SourceGraphic"/>
+      <feBlend result="blend-2" in="SourceGraphic"/>
+      <feGaussianBlur result="blur-2" stdDeviation="2.333" in="SourceAlpha"/>
+      <feFlood result="flood-2" flood-color="#fff" flood-opacity="0.22"/>
+      <feComposite result="composite-6" operator="out" in2="blur-2"/>
+      <feComposite result="composite-5" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-3" mode="hardLight" in2="blend-2"/>
+    </filter>
+  </defs>
+  <g transform="translate(-392 -1843)" style="fill: none; filter: url(#filter)">
+    <path id="Rectangle_11_copy_4" data-name="Rectangle 11 copy 4" class="cls-1" d="M412,1939.34v-21.45c0-30.31,22.386-54.89,50-54.89H1464c27.61,0,50,24.58,50,54.89,0,0-.12,22.56,0,22.38m0,29.09c-0.08-.61,0,16.74,0,16.74,0,30.32-22.39,54.89-50,54.89H462c-27.614,0-50-24.57-50-54.89v-13.83" style="stroke: inherit; filter: none; fill: inherit"/>
+  </g>
+  <use transform="translate(-392 -1843)" xlink:href="#Rectangle_11_copy_4" style="stroke: #f0f; filter: none; fill: none"/>
+</svg>
