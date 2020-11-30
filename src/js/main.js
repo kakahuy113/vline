@@ -199,7 +199,39 @@ const checkCodeLogin = () => {
 		})
 	})
 }
+function scrollToSection() {
+    $('[data-scroll-to]').on('click', function(e) {
+        e.preventDefault();
+        const scrollToNumber = $(this).attr('data-scroll-to');
+        $('html,body').animate({
+                scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
+                    $('header').height(),
+            },
+            1200
+        );
+        // $('header .nav-item').removeClass('active');
+        // $('#overlay').removeClass('active');
+        // $('body').removeClass('disabled');
 
+        // const activeSectionWhenScroll = () => {
+        //     $('[data-scroll-id]').each(function() {
+        //         if (
+        //             this.getBoundingClientRect().top < 2 * $('header').height() &&
+        //             this.getBoundingClientRect().top > 0
+        //         ) {
+        //             const toId = $(this).attr('data-scroll-id');
+        //             $(`[data-scroll-to]`).removeClass('active');
+        //             $(`[data-scroll-to="${toId}"]`).addClass('active');
+
+        //         }
+        //     });
+        // }
+        // activeSectionWhenScroll();
+        // $(window).on('scroll', function() {
+        //     activeSectionWhenScroll();
+        // });
+    });
+};
 function autoLogin() {
 
 	let checkLogin = $('#checkLogin').val();
@@ -274,6 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		AccountController();
 		imageMap();
 		bannerSwiper();
+		scrollToSection();
 		// WOW
 		new WOW().init();
 	});
