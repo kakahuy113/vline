@@ -81,6 +81,17 @@ const checkCodeLogin = () => {
 		let checVote = $('#checkVote').val();
 		if (voteCount === 5 && checkLogin =='true') {
 			// const url = document.getElementById('btn-vote').getAttribute('data-url');
+			if(checVote == "true") {
+				$.fancybox.open({
+					src: '#form-thank',
+					type: 'inline',
+					opts: {
+						hash: false,
+						closeExisting: true,
+					}
+				})
+				return;
+			}
 			$.fancybox.open({
 				src: '#form-vote',
 				type: 'inline',
@@ -130,16 +141,7 @@ const checkCodeLogin = () => {
 					closeExisting: true,
 				}
 			})
-		} else if(checVote == "true") {
-			$.fancybox.open({
-				src: '#form-thank',
-				type: 'inline',
-				opts: {
-					hash: false,
-					closeExisting: true,
-				}
-			})
-		}
+		} 
 		// else {
 		// 	$('#form-thank .desc').html('<p>Bạn chưa chọn bất kì hạng mục nào</p><p>Hoặc bạn chưa chọn đủ các hạng mục</p><p></p><p></p>');
 		// 	$.fancybox.open({
