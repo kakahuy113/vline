@@ -101,7 +101,7 @@ const checkCodeLogin = () => {
 			
 		}
 		if (voteCount === 5 && checkLogin =='true') {
-			// const url = document.getElementById('btn-vote').getAttribute('data-url');
+			const url = document.getElementById('btn-vote').getAttribute('data-url');
 			// if(checVote == "true") {
 			// 	$("#btn-submit").trigger("click");
 			// 	const warning = $("#form-thank .title").attr("data-thank");
