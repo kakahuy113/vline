@@ -23,6 +23,7 @@
 		}
 		.img {
 			display: block;
+			height: 100%;
 		}
 		.video {
 			display: block;
@@ -32,6 +33,37 @@
 				width: 100%;
 				height: 100%;
 				pointer-events: none;
+			}
+		}
+		.bg-youtube-video {
+			background: rgba($color: #000000, $alpha: .76);
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			pointer-events: none;
+			cursor: pointer;
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50% , -50%);
+				background: url(../assets/images/new-vline/video-icon-banner.png) no-repeat;
+				width: 229px;
+				height: 229px;
+				opacity: 0;
+				pointer-events: none;
+				background-size: contain;
+			}
+			&.show {
+				opacity: 1;
+				pointer-events: all;
+				&::after {
+					opacity: 1;
+				}
 			}
 		}
 	}
@@ -92,6 +124,7 @@
 		align-items: center;
 		margin-right: -30px;
 		margin-left: -30px;
+		margin-bottom: 30px;
 		> div {
 			padding-left: 30px;
 			padding-right: 30px;
@@ -128,7 +161,7 @@
 		background: url(../assets/images/new-vline/glow-bg.png) no-repeat;
 		background-size: 100% 100%;
 		.step__wrapper {
-			max-width: 80%;
+			max-width: 780px;
 			margin-left: auto;
 			margin-right: auto;
 			padding: 40px 0;
@@ -204,13 +237,13 @@
 		background-size: 100% 100%;
 		padding: 40px 80px;
 		text-align: center;
-		max-width: 1130px;
+		max-width: 1200px;
 		margin-left: auto;
 		margin-right: auto;
 		p {
 			font-size: 23px;
 			&:not(:last-child) {
-				margin-bottom: 30px;
+				// margin-bottom: 30px;
 			}
 			span {
 				color: #fff000;
@@ -227,7 +260,9 @@
 			padding: 0;
 			background: unset;
 		}
-		
+		.mb-30 {
+			margin-bottom: 30px;
+		}
 	}
 	.block--button-catalog {
 		margin-bottom: 30px;
@@ -254,7 +289,7 @@
 				border: none;
 				line-height: 1.5;
 				border-radius: 18px;
-				width: 170px;
+				width: 154px;
 				height: 114px;
 				transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 				background: linear-gradient(-48deg , #eac722 0% , #f78354 51%, #fd28cb 100%);
@@ -266,6 +301,10 @@
 					color: #ffffff;
 					font-family: SFUIDisplay-Black;
 					padding: 0 20px;
+					&.change {
+						font-size: 17px;
+						padding: 0 10px;
+					}
 				}
 			}
 		}
@@ -340,9 +379,23 @@
 			p {
 				color: #fff000;
 				font-size: 23px;
-				max-width: 480px;
+				max-width: 484px;
 				margin-left: auto;
 				margin-right: auto;
+				text-align: justify;
+				text-align-last: center;
+				&.mw-694 {
+					max-width: 694px;
+				}
+				&.mw-100 {
+					max-width: 100%;
+				}
+				&.mw-510 {
+					max-width: 510px;
+				}
+				&.mw-405 {
+					max-width: 405px;
+				}
 			}
 			@media (max-width: 767.98px) {
 				h3 {
@@ -352,6 +405,7 @@
 					}
 				}
 			}
+			
 		}
 		.row-wrapper {
 			.list-vote {
@@ -686,6 +740,9 @@
 
 .index-5 {
 	margin-bottom: 120px;
+	@media (max-width: 575.98px) {
+		margin-bottom: 40px;
+	}
 	.logo-index-5 {
 		max-width: 604px;
 		width: 100%;
@@ -724,13 +781,16 @@
 }
 .index-6 {
 	margin-bottom: 100px;
+	@media (max-width: 575.98px) {
+		margin-bottom: 20px;
+	}
 	.info-program {
 		background: url(../assets/images/new-vline/glow-big.png) no-repeat;
 		background-size: 100% 100%;
 		position: relative;
 		.btn {
 			position: absolute;
-			width: 80%;
+			max-width: 1000px;
 			height: 114px;
 			top: -4%;
 			max-width: 80%;
@@ -747,7 +807,16 @@
 				justify-content: center;
 			}
 		}
-		@media (max-width: 767.98px) {
+		@media (max-width: 1359.98px) {
+			.btn {
+				top: -2%;
+				height: 80px;
+				a {
+					font-size: 30px;
+				}
+			}
+		}
+		@media (max-width: 1024.98px) {
 			background: unset;
 			.btn {
 				position: relative;
@@ -772,11 +841,21 @@
 				}
 			}
 		}
+		@media (max-width: 575.98px) {
+			.info-program__wrapper {
+				p {
+					font-size: 20px;
+					span {
+						font-size: 20px;
+					}
+				}
+			}
+		}
 	}
 	
 
 	.info-program__wrapper {
-		width: 80%;
+		max-width: 1000px;
 		margin: 0 auto;
 		padding-top: 130px;
 		padding-bottom: 80px;
@@ -800,13 +879,14 @@
 		.schedule,
 		.step-join {
 			text-align: left;
-			max-width: 700px;
-			margin: 0 auto;
+			max-width: unset;
 			margin-bottom: 50px;
+			margin-top: 20px;
+			margin-left: 18%;
 			.item {
 				display: flex;
 				margin-bottom: 5px;
-				
+				align-items: center;
 				.time {
 					background:linear-gradient(90deg,#eac722 0%, #f78354 51%, #fd28cb 100%);
 					height: 54px;
@@ -828,10 +908,24 @@
 					}
 				}
 			}
+			@media (max-width: 575.98px) {
+				margin-left: 5%;
+				.item {
+					.time {
+						p {
+							font-size: 25px;
+						}
+					}
+					.desc {
+						p {
+							font-size: 22px;
+						}
+					}
+				}
+			}
 		}
 		> p {
 			// &:first-child {
-				margin-bottom: 20px;
 			// }
 			&:last-child {
 				margin-bottom: 0;

@@ -327,15 +327,18 @@ const bannerSwiper = () => {
 		event.target.playVideo();
 	}
 	function onPlayerStateChange(event) {
-		if (event.data == YT.PlayerState.PLAYING ) {
-			
+		if (event.data == window.YT.PlayerState.PLAYING ) {
+			$(".bg-youtube-video").removeClass("show")
 		} else {
-		
+			$(".bg-youtube-video").addClass("show")
 		}
-		}
-		function stopVideo() {
-			player.stopVideo();
-		}
+	}
+	$(".youtube-video").on("click" , function() {
+		player.stopVideo();
+	})
+	$(".bg-youtube-video").on("click" , function() {
+		player.playVideo();
+	})
 		const swiper = new Swiper(".index-1 .swiper-container" , {
 			slidesPerView: 1,
 			loop: true,

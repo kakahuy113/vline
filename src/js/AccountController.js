@@ -6,11 +6,13 @@ module.exports = () => {
 			avatar: "",
 		},
 		init: function () {
+			const keygoogle = $(".btn-google").attr("data-key")
+			const keyfacebook = $(".btn-facebook").attr("data-key")
 			// INIT GOOGLE
 			Array.from(document.querySelectorAll('.btn-google')).forEach(function (btn) {
 				gapi.load('auth2', function () {
 					auth2 = gapi.auth2.init({
-						client_id: '111231613981-4ar5t5o0nmb5aon7f4eal155954didl4.apps.googleusercontent.com',
+						client_id: `${keygoogle}`,
 						cookiepolicy: 'single_host_origin',
 					});
 					AccountController.events.attachGGSignin(btn);
@@ -19,7 +21,7 @@ module.exports = () => {
 			// INIT FACEBOOK
 			window.fbAsyncInit = function () {
 				FB.init({
-					appId: '415663406248992',
+					appId: `${keyfacebook}`,
 					cookie: true,
 					xfbml: true,
 					version: 'v9.0'

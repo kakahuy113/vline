@@ -8,9 +8,15 @@
 					a(href="") BÌNH CHỌN
 			.guide-selection
 				p
-					!= `Ấn <span>"VOTE"</span> dưới hình nghệ sĩ mà bạn muốn bình chọn trong từng hạng mục Sau khi đã bình chọn cho tất cả các hạng mục, hãy chọn <span>"HOÀN TẤT"</span> bên dưới nhé!`
+					!= `Ấn <span>"VOTE"</span> dưới hình nghệ sĩ mà bạn muốn bình chọn trong từng hạng mục`
+				p.mb-30
+					!= `Sau khi đã bình chọn cho tất cả các hạng mục, hãy chọn <span>"HOÀN TẤT"</span> bên dưới nhé!`
 				p
-					!= "Lưu ý:  Mỗi số chứng minh nhân dân/ căn cước công dân/ thẻ học sinh được bình chọn 1 lượt 1 ngày. Thời gian bình chọn từ ngày <strong>04/12/2020</strong> – đến ngày <strong>03/01/2021</strong> Một ngày được tính tính từ <strong>0:00:01</strong> tới <strong>23:59:59</strong>"
+					!= "Lưu ý:  Mỗi số chứng minh nhân dân/ căn cước công dân/ thẻ học sinh được bình chọn 1 lượt 1 ngày"
+				p
+					!= `Thời gian bình chọn từ ngày <strong>04/12/2020</strong> – đến ngày <strong>03/01/2021</strong>`
+				p
+					!= "Một ngày được tính tính từ <strong>0:00:01</strong> tới <strong>23:59:59</strong>"
 			.block--button-catalog
 				.row
 					.item
@@ -24,7 +30,7 @@
 							a(href="javascript:;" data-scroll-to="8") RISING START OF  THE YEAR
 					.item
 						.item__wrapper
-							a(href="javascript:;" data-scroll-to="9") V MEMBERSHIP COMMUNITY 
+							a(href="javascript:;" data-scroll-to="9").change V MEMBERSHIP COMMUNITY 
 					.item
 						.item__wrapper
 							a(href="javascript:;" data-scroll-to="10") BEST STAGE OF V HEARTBEAT
@@ -69,7 +75,7 @@
 		.container-custom.size-1365px
 			.title
 				h3 BEST VPOP COMBACK
-				p Giải thưởng tôn vinh nghệ sĩ sở hữu tác phẩm “comeback” ấn tượng, tạo xu hướng trong năm 2019
+				p.mw-694 Giải thưởng tôn vinh nghệ sĩ sở hữu tác phẩm “comeback” ấn tượng, tạo xu hướng trong năm 2019
 			.row-wrapper
 				.row.no-gutters.list-vote
 					.item-vote(data-value=1)
@@ -106,7 +112,7 @@
 		.container-custom.size-1365px
 			.title
 				h3 RISING STAR OF THE YEAR
-				p Giải thưởng tôn vinh nhóm nhạc hoạt động xuất sắc trong năm 2019
+				p.mw-405 Giải thưởng tôn vinh nghệ trẻ tài năng, được yêu thích trong năm 2020
 			.row-wrapper
 				.row.no-gutters.list-vote
 					.item-vote(data-value=1)
@@ -143,7 +149,7 @@
 		.container-custom.size-1365px
 			.title
 				h3 V MEMBERSHIP COMMUNITY
-				p Giải thưởng tôn vinh những nghệ sĩ hoạt động nghệ thuật xuất sắc trong năm 2019
+				p Giải thưởng tôn vinh công đồng V MEMBERSHIP hoạt động tích cực trên VLIVE trong năm 2020
 			.row-wrapper
 				.row.no-gutters.list-vote
 					.item-vote(data-value=1)
@@ -180,7 +186,8 @@
 		.container-custom.size-1365px
 			.title
 				h3 BEST STAGE OF V HEARTBEAT
-				p Giải thưởng tôn vinh ca sĩ/ nhóm nhạc KPOP có màn trình diễn được yêu thích trên sân khấu V Heartbeat LIVE trong năm 2019.
+				p.mw-510
+					!= "Giải thưởng tôn vinh màn trình diễn được yêu thích trên sân khấu <span> V HEARTBEAT</span> trong năm 2020"
 			.row-wrapper
 				.row.no-gutters.list-vote.border-0
 					.item-vote(data-value=1)
@@ -225,6 +232,8 @@
 								img.ofc(src="./assets/images/item-vote/vhb_stage_of_kpop/7.jpg", alt="")
 							figcaption
 								h5 Bình Chọn
+			.title
+				p.mw-100 Vị trí nghệ sĩ tại các mục bình chọn được sắp xếp theo thứ tự alphabet
 	.btn-selection.shadow
 		button#btn-vote(data-url="#") HOÀN TẤT
 .vector

@@ -51,7 +51,7 @@ footer {
 		ul {
 			display        : flex;
 			justify-content: flex-start;
-
+			
 			li {
 				cursor      : pointer;
 				margin-right: 25px;
@@ -59,6 +59,9 @@ footer {
 				&:last-child {
 					margin-right: 0;
 				}
+			}
+			.apple {
+				margin-right: 55px;
 			}
 		}
 	}
