@@ -44,11 +44,16 @@ function mobileMenu() {
 		$(this).parents('header').toggleClass('active');
 		$('body').toggleClass('disabled');
 	});
-	$(".list-nav .login").on("click" , function() {
-		$.fancybox.open({
-			src: "#auto-login",
-			type: "inline"
-		})
+	
+	$(".list-nav .avatar").on("click" , function(e) {
+		if(e.currentTarget.getAttribute("islogin") == "true") {
+			return;
+		} else {
+			$.fancybox.open({
+				src: "#auto-login",
+				type: "inline"
+			})	
+		}
 	})
 }
 

@@ -301,7 +301,11 @@
 					color: #ffffff;
 					font-family: SFUIDisplay-Black;
 					padding: 0 20px;
-					&.change {
+				}
+			}
+			&:nth-last-child(2) {
+				.item__wrapper {
+					a {
 						font-size: 17px;
 						padding: 0 10px;
 					}
@@ -384,18 +388,7 @@
 				margin-right: auto;
 				text-align: justify;
 				text-align-last: center;
-				&.mw-694 {
-					max-width: 694px;
-				}
-				&.mw-100 {
-					max-width: 100%;
-				}
-				&.mw-510 {
-					max-width: 510px;
-				}
-				&.mw-405 {
-					max-width: 405px;
-				}
+			
 			}
 			@media (max-width: 767.98px) {
 				h3 {
@@ -422,7 +415,34 @@
 				}
 			}
 		}
-	
+		&:nth-child(3) {
+			.title {
+				p {
+					max-width: 694px;
+				}
+			}
+		}
+		&:nth-child(4) {
+			.title {
+				p {
+					max-width: 405px;
+				}
+			}
+		}
+		&:nth-child(6) {
+			.title {
+				p {
+					max-width: 510px;
+				}
+			}
+		}
+		&:nth-child(7) {
+			.title {
+				p {
+					max-width: 100%;
+				}
+			}
+		}
 	}
 
 	// LAP TOP NHỎ -> DƯỚI 1640px
