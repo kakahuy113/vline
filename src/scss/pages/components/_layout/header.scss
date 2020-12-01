@@ -58,28 +58,8 @@ header {
 				}
 
 				.avatar {
-					padding-right: 15px;
-
-					figure {
-						height       : 35px;
-						width        : 35px;
-						border-radius: 50%;
-						background   : #606060;
-						overflow     : hidden;
-					}
-				}
-
-				.login {
 					position    : relative;
-					margin-right: 45px;
 					padding-left: 25px;
-
-					.name,
-					.button-login {
-						cursor: pointer;
-						color : #ffffff;
-					}
-
 					&:after {
 						content   : '';
 						position  : absolute;
@@ -90,6 +70,25 @@ header {
 						transform : translateY(-50%);
 						background: #ffffff;
 					}
+					figure {
+						height       : 35px;
+						width        : 35px;
+						border-radius: 50%;
+						background   : #606060;
+						overflow     : hidden;
+					}
+				}
+
+				.login {
+					margin-right: 35px;
+
+					.name,
+					.button-login {
+						cursor: pointer;
+						color : #ffffff;
+					}
+
+					
 				}
 
 				.list-download {
