@@ -82,76 +82,80 @@ const checkCodeLogin = () => {
 		// LẤY SỐ LƯỢNG ITEM ĐÃ ĐƯỢC CHECK
 		const voteCount = $('.block-vote .list-vote .item-vote.checked').length;
 		let checkLogin = $('#checkLogin').val();
-		let checVote = $('#checkVote').val();
 		if (voteCount < 5) {
 			const warning = $("#form-thank .title").attr("data-warning");
 			$("#form-thank .title p").text(`${warning}`)
+			$("#form-thank .sub-title p").css("opacity" , "0")
 			$.fancybox.open({
 				src: '#form-thank',
 				type: 'inline',
 				opts: {
 					hash: false,
 					closeExisting: true,
-				}
+					beforeClose   : function( instance, current ) {
+						$("#form-thank .sub-title p").css("opacity" , "1")
+					}
+				},
+				
 			})
 			
 		}
 		if (voteCount === 5 && checkLogin =='true') {
 			// const url = document.getElementById('btn-vote').getAttribute('data-url');
-			if(checVote == "true") {
-				$("#btn-submit").trigger("click");
-				const warning = $("#form-thank .title").attr("data-thank");
-				$("#form-thank .title p").text(`${warning}`)
-				$.fancybox.open({
-					src: '#form-thank',
-					type: 'inline',
-					opts: {
-						hash: false,
-						closeExisting: true,
+			// if(checVote == "true") {
+			// 	$("#btn-submit").trigger("click");
+			// 	const warning = $("#form-thank .title").attr("data-thank");
+			// 	$("#form-thank .title p").text(`${warning}`)
+			// 	$.fancybox.open({
+			// 		src: '#form-thank',
+			// 		type: 'inline',
+			// 		opts: {
+			// 			hash: false,
+			// 			closeExisting: true,
+			// 		}
+			// 	})
+			// 	return;
+			// }
+		
+			$.ajax({
+				url: url,
+				type: 'POST',
+				data: {},
+				beforeSend: function(e) {
+					$('.index-4 #btn-vote').attr('disabled', 'disabled')
+				},
+				success: function(res) {
+					if (res.Code === 200) {
+						$.fancybox.open({
+							src: '#form-vote',
+							type: 'inline',
+							opts: {
+								hash: false,
+								closeExisting: true,
+							}
+						})
+					} else if (res.Code === 202) {
+						$('#name').val('ABC');
+						$('#phone').val('123456');
+						$('#cmnd').val('0987654321');
+						$('#form-vote #btn-submit').trigger('click');
+					} else {
+						const warning = $("#form-thank .title").attr("data-thank");
+						$("#form-thank .title p").text(`${warning}`)
+						$.fancybox.open({
+							src: '#form-thank',
+							type: 'inline',
+							opts: {
+								hash: false,
+								closeExisting: true,
+							}
+						});
 					}
-				})
-				return;
-			}
-			$.fancybox.open({
-				src: '#form-vote',
-				type: 'inline',
-				opts: {
-					hash: false,
-					closeExisting: true,
+				},
+				complete: function(response) {
+					$('.index-4 #btn-vote').removeAttr('disabled')
 				}
 			})
-			// $.ajax({
-			// 	url: url,
-			// 	type: 'POST',
-			// 	data: {},
-			// 	beforeSend: function(e) {
-			// 		$('.index-4 #btn-vote').attr('disabled', 'disabled')
-			// 	},
-			// 	success: function(res) {
-			// 		if (res.Code === 200) {
-					
-			// 		} else if (res.Code === 202) {
-			// 			$('#Form-Name').val('ABC');
-			// 			$('#Form-Identity').val('123456');
-			// 			$('#Form-Phone').val('0987654321');
-			// 			$('#Form-Email').val('a@abc.com');
-			// 			$('#form-vote #btn-submit').trigger('click');
-			// 		} else {
-			// 			$('#form-thank .desc').html(res.Messege);
-			// 			$.fancybox.open({
-			// 				src: '#form-thank',
-			// 				type: 'inline',
-			// 				opts: {
-			// 					hash: false,
-			// 					closeExisting: true,
-			// 				}
-			// 			});
-			// 		}
-			// 	},
-			// 	complete: function(response) {
-			// 		$('.index-4 #btn-vote').removeAttr('disabled')
-			// 	}
-			// })
 		} else if (checkLogin == "false") {
 			$.fancybox.open({
 				src: '#auto-login',
@@ -201,6 +205,8 @@ const checkCodeLogin = () => {
 			success: function(res) {
 				$('#btn-submit').attr('disabled', 'disabled');
 				if(res.Code == 200) {
+					const warning = $("#form-thank .title").attr("data-thank");
+					$("#form-thank .title p").text(`${warning}`)
 					$.fancybox.open({
 						src: '#form-thank',
 						type: 'inline',
