@@ -25,6 +25,7 @@
 			display: block;
 		}
 		.video {
+			display: block;
 			height: 100%;
 			width: 100%;
 			iframe {
@@ -877,6 +878,7 @@
 					width: 133px;
 					height: 133px;
 					transform: translate(-50% , -50%);
+					pointer-events: none;
 				}
 				&::before {
 					content: "";
@@ -886,6 +888,7 @@
 					background: rgba($color: #000000, $alpha: .61);
 					top: 0;
 					left: 0;
+					pointer-events: none;
 				}
 			}
 			.desc {

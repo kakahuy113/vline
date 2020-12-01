@@ -215,6 +215,7 @@ const checkCodeLogin = () => {
 		})
 	})
 }
+
 function scrollToSection() {
     $('[data-scroll-to]').on('click', function(e) {
         e.preventDefault();
@@ -246,7 +247,8 @@ function scrollToSection() {
         //     activeSectionWhenScroll();
         // });
     });
-};
+}
+
 function autoLogin() {
 
 	let checkLogin = $('#checkLogin').val();
@@ -290,23 +292,69 @@ function autoLogin() {
 const imageMap = () => {}
 
 const bannerSwiper = () => {
-	const swiper = new Swiper(".index-1 .swiper-container" , {
-		slidesPerView: 1,
-		loop: true,
-		// effect: 'fade',
-		autoplay: {
-			delay: 5000
-		},
-		navigation: {
-			nextEl: '.index-1 .swiper-button-next',
-			prevEl: '.index-1 .swiper-button-prev',
-		},
-		pagination: {
-			el: '.index-1 .swiper-pagination',
-			clickable: true
-		},
+	// Init Youtube Video API
+	// var script = document.createElement('script');
+	// script.onload = function() {
+	// 	console.log("Script loaded and ready");
+	// };
+	// if(document.querySelector(".youtube-video")) {
+	// 	script.src = `https://www.youtube.com/iframe_api`;
+	// 	script.setAttribute("async", "");
+	// 	script.setAttribute("defer", "");
+	// 	document.getElementsByTagName('body')[0].appendChild(script);
+	// }
+
+	
+
+	const youtuID = document.querySelector(".youtube-video").getAttribute("data-youtube-id");
+	var player;
+	var YT;
+
+	window.YT.ready(function() {
+		player = new window.YT.Player('VYT', {
+			videoId: `${youtuID}`,
+			playerVars: {
+				autoplay: 1,
+				controls: 0
+			},
+			events: {
+				'onReady': onPlayerReady,
+				'onStateChange': onPlayerStateChange
+			}
+		});
 	})
+	function onPlayerReady(event) {
+		event.target.playVideo();
+	}
+	function onPlayerStateChange(event) {
+		if (event.data == YT.PlayerState.PLAYING ) {
+			
+		} else {
+		
+		}
+		}
+		function stopVideo() {
+			player.stopVideo();
+		}
+		const swiper = new Swiper(".index-1 .swiper-container" , {
+			slidesPerView: 1,
+			loop: true,
+			// effect: 'fade',
+			autoplay: {
+				delay: 5000
+			},
+			navigation: {
+				nextEl: '.index-1 .swiper-button-next',
+				prevEl: '.index-1 .swiper-button-prev',
+			},
+			pagination: {
+				el: '.index-1 .swiper-pagination',
+				clickable: true
+			},
+		})
+		
 }
+
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	$('map').imageMapResize();
