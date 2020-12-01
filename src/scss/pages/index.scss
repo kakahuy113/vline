@@ -751,23 +751,7 @@
 			.row-wrapper {
 				.list-vote {
 					.item-vote {
-						flex     : 0 0 100%;
-						max-width: 100%;
-					}
-				}
-			}
-
-			&:nth-child(2),
-			&:nth-child(4),
-			&:nth-child(6),
-			&:nth-child(7) {
-
-				.row-wrapper {
-					.list-vote {
-						.item-vote {
-							flex     : 100%;
-							max-width: 100%;
-						}
+						padding: 0 10px;
 					}
 				}
 			}
@@ -919,7 +903,7 @@
 			max-width: unset;
 			margin-bottom: 50px;
 			margin-top: 20px;
-			margin-left: 18%;
+			margin-left: 20%;
 			.item {
 				display: flex;
 				margin-bottom: 5px;

@@ -362,7 +362,6 @@ const bannerSwiper = () => {
 			on: {
 				slideChange: function () {
 					const activeslide = document.querySelector(".index-1 .swiper-container .swiper-slide-next")
-					console.log(activeslide);
 					if(activeslide.querySelector(".youtube-video")) {
 						player.playVideo();
 					}
