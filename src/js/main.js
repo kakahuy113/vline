@@ -92,7 +92,7 @@ const checkCodeLogin = () => {
 				opts: {
 					hash: false,
 					closeExisting: true,
-					beforeClose   : function( instance, current ) {
+					afterClose   : function( instance, current ) {
 						$("#form-thank .sub-title p").css("opacity" , "1")
 					}
 				},
@@ -215,6 +215,17 @@ const checkCodeLogin = () => {
 							closeExisting: true,
 						}
 					});
+				} else {
+					// const warning = $("#form-thank .title").attr("data-thank");
+						$("#form-thank .title p").text(`${res.Message}`)
+						$.fancybox.open({
+							src: '#form-thank',
+							type: 'inline',
+							opts: {
+								hash: false,
+								closeExisting: true,
+							}
+						});
 				}
 				$('.item-vote').removeClass('checked');
 
