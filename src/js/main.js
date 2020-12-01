@@ -318,8 +318,9 @@ const bannerSwiper = () => {
 		player = new window.YT.Player('VYT', {
 			videoId: `${youtuID}`,
 			playerVars: {
-				autoplay: 1,
-				controls: 0
+				// autoplay: 1,
+				controls: 0,
+				origin: `${window.location.origin}`
 			},
 			events: {
 				'onReady': onPlayerReady,
@@ -328,7 +329,7 @@ const bannerSwiper = () => {
 		});
 	})
 	function onPlayerReady(event) {
-		event.target.playVideo();
+		// event.target.playVideo();
 	}
 	function onPlayerStateChange(event) {
 		if (event.data == window.YT.PlayerState.PLAYING ) {
@@ -358,10 +359,29 @@ const bannerSwiper = () => {
 				el: '.index-1 .swiper-pagination',
 				clickable: true
 			},
+			on: {
+				slideChange: function () {
+					const activeslide = document.querySelector(".index-1 .swiper-container .swiper-slide-next")
+					console.log(activeslide);
+					if(activeslide.querySelector(".youtube-video")) {
+						player.playVideo();
+					}
+					// if(!activeslide.querySelector(".youtube-video")) {
+					// 	player.stopVideo();
+					// }
+				},
+			  },
 		})
 		
 }
 
+const dropLine = () => {
+	document.querySelectorAll(".block-vote .title p").forEach(item => {
+		const text = item.outerHTML;
+		const newText = text.replace("." , "</br>");
+		item.outerHTML = newText
+	})
+}
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {
 	$('map').imageMapResize();
@@ -377,6 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		imageMap();
 		bannerSwiper();
 		scrollToSection();
+		dropLine();
 		// WOW
 		new WOW().init();
 	});
