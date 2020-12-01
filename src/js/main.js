@@ -136,12 +136,12 @@ const checkCodeLogin = () => {
 						})
 					} else if (res.Code === 202) {
 						$('#name').val('ABC');
-						$('#phone').val('123456');
+						$('#phone').val('0987654321');
 						$('#cmnd').val('0987654321');
 						$('#form-vote #btn-submit').trigger('click');
 					} else {
-						const warning = $("#form-thank .title").attr("data-thank");
-						$("#form-thank .title p").text(`${warning}`)
+						// const warning = $("#form-thank .title").attr("data-thank");
+						$("#form-thank .title p").text(`${res.Message}`)
 						$.fancybox.open({
 							src: '#form-thank',
 							type: 'inline',
