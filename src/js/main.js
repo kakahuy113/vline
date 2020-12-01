@@ -44,17 +44,16 @@ function mobileMenu() {
 		$(this).parents('header').toggleClass('active');
 		$('body').toggleClass('disabled');
 	});
-	
-	$(".list-nav .avatar").on("click" , function(e) {
-		if(e.currentTarget.getAttribute("islogin") == "true") {
-			return;
-		} else {
+	let checkLogin = $('#checkLogin').val();
+	if(checkLogin == "false") {
+		$(".list-nav .avatar").on("click" , function(e) {
 			$.fancybox.open({
 				src: "#auto-login",
 				type: "inline"
-			})	
-		}
-	})
+			})
+		})
+	}
+	
 }
 
 var flat = 0;
