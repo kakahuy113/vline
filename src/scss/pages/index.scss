@@ -890,6 +890,9 @@
 			-webkit-text-fill-color: transparent;
 			font-family: SFUIDisplay-Black;
 			font-size: 40px;
+			@media (max-width: 575.98px) {
+				font-size: 30px;
+			}
 		}
 		p {
 			font-size: 30px;
