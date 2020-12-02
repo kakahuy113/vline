@@ -456,10 +456,7 @@ body {
 		width: unset;
 		color: #000000;
 		text-align: center;
-		.sub-title {
-			font-size: 25px;
-			margin-bottom: 25px;
-		}
+		
 		.title-form {
 			font-size: 25px;
 			margin-bottom: 10px;
@@ -517,12 +514,18 @@ body {
 	}
 	.title {
 		p {
-			text-align: center;
-			color: #000000;
-			font-size: 50px;
-			font-family: SFUIDisplay-Black;
-			@media (max-width: 575.98px) {
-				font-size: 35px;
+			&:first-child {
+				text-align: center;
+				color: #000000;
+				font-size: 50px;
+				font-family: SFUIDisplay-Black;
+				@media (max-width: 575.98px) {
+					font-size: 35px;
+				}
+			}
+			&:last-child {
+				font-size: 25px;
+			margin-bottom: 25px;
 			}
 		}
 	}

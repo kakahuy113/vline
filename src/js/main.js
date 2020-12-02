@@ -85,16 +85,14 @@ const checkCodeLogin = () => {
 		if (voteCount < 5) {
 			const warning = $("#form-thank .title").attr("data-warning");
 			$("#form-thank .title p").text(`${warning}`)
-			$("#form-thank .sub-title p").css("display" , "none")
+			
 			$.fancybox.open({
 				src: '#form-thank',
 				type: 'inline',
 				opts: {
 					hash: false,
 					closeExisting: true,
-					afterClose   : function( instance, current ) {
-						$("#form-thank .sub-title p").css("display" , "block")
-					}
+					
 				},
 				
 			})
@@ -141,7 +139,7 @@ const checkCodeLogin = () => {
 						$('#form-vote #btn-submit').trigger('click');
 					} else {
 						// const warning = $("#form-thank .title").attr("data-thank");
-						$("#form-thank .title p").text(`${res.Message}`)
+						$("#form-thank .title").html(`${res.Message}`)
 						$.fancybox.open({
 							src: '#form-thank',
 							type: 'inline',
@@ -205,8 +203,7 @@ const checkCodeLogin = () => {
 			success: function(res) {
 				$('#btn-submit').attr('disabled', 'disabled');
 				if(res.Code == 200) {
-					const warning = $("#form-thank .title").attr("data-thank");
-					$("#form-thank .title p").text(`${warning}`)
+					$("#form-thank .title").html(`${res.Message}`)
 					$.fancybox.open({
 						src: '#form-thank',
 						type: 'inline',
@@ -217,7 +214,7 @@ const checkCodeLogin = () => {
 					});
 				} else {
 					// const warning = $("#form-thank .title").attr("data-thank");
-						$("#form-thank .title p").text(`${res.Message}`)
+						$("#form-thank .title").html(`${res.Message}`)
 						$.fancybox.open({
 							src: '#form-thank',
 							type: 'inline',
