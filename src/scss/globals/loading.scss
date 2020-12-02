@@ -43,6 +43,9 @@
 		left: 50%;
 		margin-top: -70px;
 		width: 428px;
-		height: 84px
+		height: 84px;
+		@media (max-width: 575.98px) {
+			width: 100%;
+		}
 	}
 }
