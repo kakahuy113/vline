@@ -210,7 +210,7 @@ const checkCodeLogin = () => {
 						opts: {
 							hash: false,
 							closeExisting: true,
-						}
+						} 
 					});
 				} else {
 					// const warning = $("#form-thank .title").attr("data-thank");
