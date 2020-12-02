@@ -523,9 +523,9 @@ body {
 					font-size: 35px;
 				}
 			}
-			&:last-child {
+			&:not(:first-child) {
 				font-size: 25px;
-			margin-bottom: 25px;
+				margin-bottom: 25px;
 			}
 		}
 	}

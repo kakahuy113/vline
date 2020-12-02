@@ -32,18 +32,18 @@
 			iframe {
 				width: 100%;
 				height: 100%;
-				pointer-events: none;
 			}
 		}
-		.bg-youtube-video {
+		.bg-youtube-video-on,
+		.bg-youtube-video-off {
 			background: rgba($color: #000000, $alpha: .76);
 			position: absolute;
 			width: 100%;
 			height: 100%;
 			top: 0;
 			left: 0;
-			opacity: 0;
-			pointer-events: none;
+			opacity: 1;
+			pointer-events: all;
 			cursor: pointer;
 			&::after {
 				content: "";
@@ -51,19 +51,25 @@
 				top: 50%;
 				left: 50%;
 				transform: translate(-50% , -50%);
-				background: url(../assets/images/new-vline/video-icon-banner.png) no-repeat;
 				width: 229px;
 				height: 229px;
-				opacity: 0;
 				pointer-events: none;
 				background-size: contain;
 			}
 			&.show {
+				background: url(../assets/images/new-vline/video-icon-banner.png) no-repeat;
 				opacity: 1;
-				pointer-events: all;
 				&::after {
 					opacity: 1;
 				}
+			}
+			&.hide {
+				background:transparent;
+				opacity: 0;
+				&::after {
+					opacity: 0;
+				}
+
 			}
 			@media (max-width: 767.98px) {
 				&::after {
@@ -138,6 +144,7 @@
 			padding-right: 30px;
 		}
 		.desc {
+			align-self: flex-end;
 			.title {
 				p {
 					font-size: 127px;
@@ -219,7 +226,7 @@
 			margin-left: -150px;
 			a {
 				justify-content: flex-end;
-				font-family: SFUIDisplay-Bold;
+				font-family: SFUIDisplay-Black;
 			}
 		}
 		.img {
