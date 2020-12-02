@@ -85,7 +85,7 @@ const checkCodeLogin = () => {
 		if (voteCount < 5) {
 			const warning = $("#form-thank .title").attr("data-warning");
 			$("#form-thank .title p").text(`${warning}`)
-			$("#form-thank .sub-title p").css("opacity" , "0")
+			$("#form-thank .sub-title p").css("display" , "none")
 			$.fancybox.open({
 				src: '#form-thank',
 				type: 'inline',
@@ -93,7 +93,7 @@ const checkCodeLogin = () => {
 					hash: false,
 					closeExisting: true,
 					afterClose   : function( instance, current ) {
-						$("#form-thank .sub-title p").css("opacity" , "1")
+						$("#form-thank .sub-title p").css("display" , "block")
 					}
 				},
 				

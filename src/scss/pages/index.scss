@@ -219,6 +219,7 @@
 			margin-left: -150px;
 			a {
 				justify-content: flex-end;
+				font-family: SFUIDisplay-Bold;
 			}
 		}
 		.img {
@@ -612,7 +613,7 @@
 		.block-vote {
 			.row-wrapper {
 				.list-vote {
-					justify-content: flex-start;
+					justify-content: center;
 
 					.item-vote {
 						flex     : 0 0 50%;
@@ -629,7 +630,7 @@
 
 				.row-wrapper {
 					.list-vote {
-						justify-content: flex-start;
+						justify-content: center;
 
 						.item-vote {
 							flex     : 0 0 50%;
