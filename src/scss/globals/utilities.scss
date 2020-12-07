@@ -637,6 +637,7 @@ body {
 		}
 		.btn-google {
 			background: #4285f4;
+			margin-bottom: 10px;
 			&::after {
 				background: url(../assets/images/new-vline/google.png) no-repeat;
 			}
@@ -647,6 +648,13 @@ body {
 			background: #3b5998;
 			&::after {
 				background: url(../assets/images/new-vline/facebook-icon.png) no-repeat;
+			}
+		}
+		.btn-vline {
+			background: linear-gradient(90deg,#eac722 0,#f78354 51%,#fd28cb 100%);
+			&::after {
+				background: url(../assets/images/new-vline/vline-footer.png) no-repeat;
+				background-size: contain;
 			}
 		}
 	}
