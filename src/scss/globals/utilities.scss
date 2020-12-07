@@ -498,6 +498,11 @@ body {
 		}
 	}
 	&#auto-login {
+		.sub-title {
+			font-size: 16px;
+			color: #000000;
+			text-align: center;
+		}
 		.register {
 			@media (max-width: 575.98px) {
 				a {
