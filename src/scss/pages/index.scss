@@ -812,6 +812,8 @@
 			.img {
 				margin-bottom: 10px;
 				position: relative;
+				max-height: 215px;
+				overflow: hidden;
 				&::after {
 					content: "";
 					position: absolute;
