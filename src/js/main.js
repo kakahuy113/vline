@@ -94,7 +94,7 @@ const checkCodeLogin = () => {
 		// LẤY SỐ LƯỢNG ITEM ĐÃ ĐƯỢC CHECK
 		const voteCount = $('.block-vote .list-vote .item-vote.checked').length;
 		let checkLogin = $('#checkLogin').val();
-		if (voteCount < 5) {
+		if (voteCount < 4) {
 			const warning = $("#form-thank .title").attr("data-warning");
 			$("#form-thank .title p").text(`${warning}`)
 			
@@ -110,7 +110,7 @@ const checkCodeLogin = () => {
 			})
 			
 		}
-		if (voteCount === 5 && checkLogin =='true') {
+		if (voteCount === < && checkLogin =='true') {
 			const url = document.getElementById('btn-vote').getAttribute('data-url');
 		
 			$.ajax({
