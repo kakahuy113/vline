@@ -110,7 +110,7 @@ const checkCodeLogin = () => {
 			})
 			
 		}
-		if (voteCount === < && checkLogin =='true') {
+		if (voteCount === 4 && checkLogin =='true') {
 			const url = document.getElementById('btn-vote').getAttribute('data-url');
 		
 			$.ajax({
