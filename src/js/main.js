@@ -94,7 +94,7 @@ const checkCodeLogin = () => {
 		// LẤY SỐ LƯỢNG ITEM ĐÃ ĐƯỢC CHECK
 		const voteCount = $('.block-vote .list-vote .item-vote.checked').length;
 		let checkLogin = $('#checkLogin').val();
-		if (voteCount < 5) {
+		if (voteCount < 4) {
 			const warning = $("#form-thank .title").attr("data-warning");
 			$("#form-thank .title p").text(`${warning}`)
 			
@@ -110,7 +110,7 @@ const checkCodeLogin = () => {
 			})
 			
 		}
-		if (voteCount === 5 && checkLogin =='true') {
+		if (voteCount === 4 && checkLogin =='true') {
 			const url = document.getElementById('btn-vote').getAttribute('data-url');
 		
 			$.ajax({
@@ -327,7 +327,8 @@ const bannerSwiper = () => {
 			slideChange: function() {
 				const active = document.querySelector(".index-1 .swiper-slide-next")
 				const activeprev = document.querySelector(".index-1 .swiper-slide-prev")
-				
+				console.log(active);
+				console.log(activeprev);
 				if(active.querySelector(".index-1 iframe")) {
 					const src = active.querySelector(".index-1 iframe").getAttribute("src")
 					if(src.includes("false")) {
@@ -349,6 +350,8 @@ const bannerSwiper = () => {
 						}, 60000);
 					}
 					
+				} else {
+					return;
 				}
 				
 			}
