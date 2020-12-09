@@ -439,29 +439,13 @@
 			}
 		}
 		&:nth-child(5) {
-			.item-vote {
-				figure {
-					max-height: 285px;
-					height: 285px;
-					@media (max-width: 1439.98px) {
-						height: 100%;
-					}
-					@media (max-width: 1024.98px) {
-						max-height: 350px;
-						
-					}
-				}
-				figcaption {
-					height: fit-content;
-					flex-direction: column;
-					h5 {
-						width: 100%;
-						border-bottom: 1px solid #000000;
-						flex: 0 0 100%;
-						max-width: 100%;
-						a {
-							display: block;
-						}
+			
+			.box-link {
+				h5 {
+					font-size: 30px;
+					text-align: center;
+					a {
+						display: block;
 					}
 				}
 			}
@@ -481,11 +465,8 @@
 	}
 
 	// LAP TOP NHỎ -> DƯỚI 1640px
-	@media (max-width: 1639.98px) {
-
+	@media (max-width: 1439.98px) {
 		.block-vote {
-
-		
 				.row-wrapper {
 					.list-vote {
 						justify-content: center;
@@ -499,34 +480,6 @@
 		}
 	}
 
-	@media (max-width:1439.98px) {
-		.block-vote {
-				.row-wrapper {
-					.list-vote {
-						.item-vote {
-							flex     : 0 0 233px;
-							max-width: 233px;
-						}
-					}
-				}
-		}
-	}
-
-	@media (max-width: 1199.98px) {
-
-		.block-vote {
-
-		
-				.row-wrapper {
-					.list-vote {
-						.item-vote {
-							flex     : 0 0 203px;
-							max-width: 203px;
-						}
-					}
-				}
-		}
-	}
 
 	// TABLET
 	@media (max-width: 767.98px) {
@@ -675,6 +628,7 @@
 				margin-bottom: 10px;
 				a {
 					font-size: 25px;
+					line-height: 1;
 				}
 			}
 			.info-program__wrapper {

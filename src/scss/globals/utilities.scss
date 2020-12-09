@@ -656,10 +656,12 @@ body {
 			}
 		}
 		.btn-vline {
-			background: #57f8ff;
-			color: #49515e;
+			background: #54f7ff;
+			a {
+				color: #49515e;
+			}
 			&::after {
-				background: url(../assets/images/new-vline/vline-footer.png) no-repeat;
+				background: url(../assets/images/new-vline/logo-button.png) no-repeat;
 				background-size: contain;
 			}
 		}
