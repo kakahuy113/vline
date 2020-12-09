@@ -657,10 +657,12 @@ body {
 		}
 		.btn-vline {
 			background: #57f8ff;
-			color: #49515e;
 			&::after {
 				background: url(../assets/images/new-vline/vline-footer.png) no-repeat;
 				background-size: contain;
+			}
+			a {
+				color: #49515e;
 			}
 		}
 	}
