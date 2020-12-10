@@ -362,6 +362,19 @@ const dropLine = () => {
 		const newText = text.replace("." , "</br>");
 		item.outerHTML = newText
 	})
+	
+	document.querySelectorAll(".block--button-catalog .item a").forEach(item => {
+		const text = item.outerHTML;
+		const newText = text.replaceAll("." , "</br>");
+		item.outerHTML = newText
+	})
+
+	document.querySelectorAll(".item-vote figcaption h5").forEach(item => {
+		const text = item.outerHTML;
+		const newText = text.replaceAll("." , "</br>");
+		item.outerHTML = newText
+	})
+	
 }
 // CHẠY KHI DOCUMENT SẴN SÀNG
 document.addEventListener('DOMContentLoaded', () => {

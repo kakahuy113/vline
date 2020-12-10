@@ -178,14 +178,14 @@ body {
 					position: absolute;
 					bottom: 0;
 					width: 100%;
-					height: 50px;
+					height: 70px;
 					background: linear-gradient(90deg , #7e2bf9 0%, #ff68da 100%);
 					display: flex;
 					align-items: center;
 					justify-content: center;
 					h5 {
 						text-align    : center;
-						font-size     : 30px;
+						font-size     : 22px;
 						font-weight   : 700;
 						text-transform: uppercase;
 						font-family: SFUIDisplay-Bold;
@@ -199,7 +199,7 @@ body {
 						}
 
 						@media (max-width: 1024.98px) {
-							font-size: 18px;
+							font-size: 16px;
 						}
 					}
 
@@ -233,17 +233,6 @@ body {
 		}
 	}
 
-	@media (max-width: 1600px) {
-		.list-vote {
-			.item-vote {
-				figure {
-					figcaption {
-						margin-top: 15px;
-					}
-				}
-			}
-		}
-	}
 
 	@media (max-width: 1024.98px) {
 		.list-vote {
