@@ -371,7 +371,7 @@ const dropLine = () => {
 
 	document.querySelectorAll(".item-vote figcaption h5").forEach(item => {
 		const text = item.outerHTML;
-		const newText = text.replaceAll("." , "</br>");
+		const newText = text.replaceAll("," , "</br>");
 		item.outerHTML = newText
 	})
 	
