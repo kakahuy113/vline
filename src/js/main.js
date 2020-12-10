@@ -365,13 +365,15 @@ const dropLine = () => {
 	
 	document.querySelectorAll(".block--button-catalog .item a").forEach(item => {
 		const text = item.outerHTML;
-		const newText = text.replaceAll("." , "</br>");
+		const splitText = text.split(".");
+		const newText = splitText.join("</br>");
 		item.outerHTML = newText
 	})
 
 	document.querySelectorAll(".item-vote figcaption h5").forEach(item => {
 		const text = item.outerHTML;
-		const newText = text.replaceAll("," , "</br>");
+		const splitText = text.split(".");
+		const newText = splitText.join("</br>");
 		item.outerHTML = newText
 	})
 	
