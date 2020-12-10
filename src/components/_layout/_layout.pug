@@ -31,7 +31,6 @@ html(lang="en")
 			.form-login#form-thank
 				.title(data-warning="VUI LÒNG CHỌN ĐỦ" data-thank="CẢM ƠN ĐÃ BÌNH CHỌN")
 					p CẢM ƠN BẠN ĐÃ BÌNH CHỌN
-					p Hãy quay lại vào ngày mai để tiếp tục bình chọn nhé
 				.button-info.common
 					button#login.btn(data-fancybox-close) QUAY LẠI
 				.note
@@ -57,7 +56,7 @@ html(lang="en")
 							button#btn-submit.btn GỬI VÀ QUAY LẠI
 				.note
 					p *Mã vé tham dự sẽ được gửi qua điện thoại trong thời gian tới
-		input#checkLogin(type='text' hidden value='false')
+		input#checkLogin(type='text' hidden value='true')
 		.d-none
 			.form-login#auto-login(url-redirect="#")
 				.title
@@ -66,12 +65,12 @@ html(lang="en")
 					p Đăng nhập bằng tài khoản Facebook và Google sẽ được vote 1 lần/ ngày 
 					p Đăng nhập bằng tài khoản VLIVE sẽ được vote 2 lần/ ngày
 				.register
-					.btn.btn-facebook(data-key="415663406248992")
-						a(href="#") Sign up with FaceBook
-					.btn.btn-google(data-key="111231613981-4ar5t5o0nmb5aon7f4eal155954didl4.apps.googleusercontent.com")
-						a(href="#") Sign up with google
-					.btn.btn-vline(data-key="111231613981-4ar5t5o0nmb5aon7f4eal155954didl4.apps.googleusercontent.com")
-						a(href="#") Sign up with Vline
+					a.btn.btn-facebook(href="" data-key="415663406248992")
+						span Sign up with FaceBook
+					a.btn.btn-google(href="" data-key="111231613981-4ar5t5o0nmb5aon7f4eal155954didl4.apps.googleusercontent.com")
+						span Sign up with google
+					a.btn.btn-vline(href="" data-key="111231613981-4ar5t5o0nmb5aon7f4eal155954didl4.apps.googleusercontent.com")
+						span Sign up with Vline
 		block scripts
 		script(type="text/javascript", src="https://www.youtube.com/iframe_api")
 		script(type="text/javascript", src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3')

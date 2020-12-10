@@ -96,7 +96,7 @@ const checkCodeLogin = () => {
 		let checkLogin = $('#checkLogin').val();
 		if (voteCount < 4) {
 			const warning = $("#form-thank .title").attr("data-warning");
-			$("#form-thank .title p").text(`${warning}`)
+			$("#form-thank .title").html(`<p>${warning}</p>`)
 			
 			$.fancybox.open({
 				src: '#form-thank',
