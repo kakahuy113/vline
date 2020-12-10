@@ -372,7 +372,7 @@ const dropLine = () => {
 
 	document.querySelectorAll(".item-vote figcaption h5").forEach(item => {
 		const text = item.outerHTML;
-		const splitText = text.split(".");
+		const splitText = text.split(",");
 		const newText = splitText.join("</br>");
 		item.outerHTML = newText
 	})
